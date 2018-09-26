@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KenticoCloud
 
 extension UIButton {
     
@@ -54,3 +55,26 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 }
+
+extension Array where Iterator.Element == QueryParameter {
+    func addSampleSite() -> [QueryParameter] {
+        let sampleSiteParam = QueryParameter.init(parameterKey: QueryParameterKey.sampleSite, parameterValue: "1")
+        var copyOfArray = self.map { $0 }
+        copyOfArray.append(sampleSiteParam)
+        return copyOfArray
+    }
+}
+
+
+class QueryStringParameter {
+    static func addSampleSite(param: String) -> String {
+        let lastChar = param.last!
+
+        if (lastChar == "/") {
+            return param + "?sampleSite=1";	
+        }
+
+        return param + "&sampleSite=1";
+    }
+}
+

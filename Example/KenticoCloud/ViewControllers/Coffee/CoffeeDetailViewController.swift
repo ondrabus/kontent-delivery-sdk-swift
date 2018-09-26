@@ -144,7 +144,8 @@ class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITab
         for callToActionName in callToActionNames {
             if let ctoName = callToActionName {
                 let client = DeliveryClient.init(projectId: AppConstants.getProjectId())
-                client.getItem(modelType: CallToAction.self, itemName: ctoName, completionHandler: {isSuccess, itemResponse, error in
+                let customQuery = QueryStringParameter.addSampleSite(param: "/items/\(ctoName)/")
+                client.getItem(modelType: CallToAction.self, customQuery: customQuery, completionHandler: {isSuccess, itemResponse, error in
                     if isSuccess {
                         if let cto = itemResponse?.item {
                             if (cto.persona?.containsName(name: "Coffee enthusiast"))! {
@@ -161,7 +162,8 @@ class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         /// Get SelectedCafes
         let client = DeliveryClient.init(projectId: AppConstants.getProjectId())
-        client.getItem(modelType: SelectedCafes.self, itemName: "cafes_in_your_area", completionHandler: {isSuccess, itemResponse, error in
+        let customQuery = QueryStringParameter.addSampleSite(param: "items/cafes_in_your_area/")
+        client.getItem(modelType: SelectedCafes.self, customQuery: customQuery, completionHandler: {isSuccess, itemResponse, error in
             if isSuccess {
                 var cafes : [Cafe?] = []
                 
