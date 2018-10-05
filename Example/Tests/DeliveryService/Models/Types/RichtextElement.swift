@@ -32,7 +32,7 @@ class RichtextElementSpec: QuickSpec {
                                 if let bodyCopy = deliveryItem?.item?.bodyCopy {
                                     let expectedType = "rich_text"
                                     let expectedName = "Body Copy"
-                                    let expectedValueLength = 3302
+                                    let expectedValueLength = 3318
                                     let expectedBlocksCount = 14
                                     let expectedInlineImagesBlocksCount = 2
                                     let expectedHtmlContentBlocksCount = 10
