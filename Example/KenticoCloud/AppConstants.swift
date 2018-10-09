@@ -9,7 +9,7 @@
 import  UIKit
 
 struct AppConstants {
-    private static let fallbackProjectId = "6d45fcfe-f4be-0005-0a6b-4e21e77bbbe1"
+    private static let fallbackProjectId = "a1b7babf-d970-000b-05cd-6a36cfe26822"
     
     static let globalBackgroundColor = UIColor.init(red: 255.0/256, green: 250.0/256, blue: 236.0/256, alpha: 1.0)
     static let imageBorderColor = UIColor.init(red: 215.0/256, green: 215.0/256, blue: 215.0/256, alpha: 1.0)

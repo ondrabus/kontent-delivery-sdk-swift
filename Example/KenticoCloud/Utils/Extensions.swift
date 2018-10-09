@@ -56,8 +56,17 @@ extension Date {
     }
 }
 
+extension String {
+    func contains(find: String) -> Bool{
+        return self.range(of: find) != nil
+    }
+    func containsIgnoringCase(find: String) -> Bool{
+        return self.range(of: find, options: .caseInsensitive) != nil
+    }
+}
+
 extension Array where Iterator.Element == QueryParameter {
-    func addSampleSite() -> [QueryParameter] {
+    func addSampleSiteParameter() -> [QueryParameter] {
         let sampleSiteParam = QueryParameter.init(parameterKey: QueryParameterKey.sampleSite, parameterValue: "1")
         var copyOfArray = self.map { $0 }
         copyOfArray.append(sampleSiteParam)
@@ -67,14 +76,12 @@ extension Array where Iterator.Element == QueryParameter {
 
 
 class QueryStringParameter {
-    static func addSampleSite(param: String) -> String {
-        let lastChar = param.last!
-
-        if (lastChar == "/") {
-            return param + "?sampleSite=1";	
+    static func addSampleSiteQueryStringParameter(param: String) -> String {
+        if (param.contains("?")) {
+            return param + "&sampleSite=1";	
         }
 
-        return param + "&sampleSite=1";
+        return param + "?sampleSite=1";
     }
 }
 

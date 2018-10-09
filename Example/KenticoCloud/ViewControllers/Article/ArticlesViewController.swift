@@ -107,7 +107,7 @@ class ArticlesViewController: ListingBaseViewController, UITableViewDataSource {
     private func getArticles() {
         self.showLoader(message: "Loading articles...")
         
-        let customQuery = QueryStringParameter.addSampleSite(param: "items?system.type=article&order=elements.post_date[desc]")
+        let customQuery = QueryStringParameter.addSampleSiteQueryStringParameter(param: "items?system.type=article&order=elements.post_date[desc]")
         
         DeliveryManager.shared.deliveryClient.getItems(modelType: Article.self, customQuery: customQuery) { (isSuccess, itemsResponse, error) in
             if isSuccess {
