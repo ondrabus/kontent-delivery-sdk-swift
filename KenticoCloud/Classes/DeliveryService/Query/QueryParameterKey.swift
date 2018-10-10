@@ -15,4 +15,5 @@ public enum QueryParameterKey: String {
     case type = "system.type"
     case sitemapLocations = "system.sitemap_locations"
     case language = "language"
+    case sampleSite = "sampleSite"
 }

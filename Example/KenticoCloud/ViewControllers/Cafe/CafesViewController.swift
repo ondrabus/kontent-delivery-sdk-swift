@@ -96,9 +96,9 @@ class CafesViewController: ListingBaseViewController, UITableViewDataSource {
     private func getCafes() {
         self.showLoader(message: "Loading cafes...")
         
-        let typeQueryParameter = QueryParameter.init(parameterKey: QueryParameterKey.type, parameterValue: contentType)
+        let typeQueryParameters = [QueryParameter.init(parameterKey: QueryParameterKey.type, parameterValue: contentType)].addSampleSiteParameter()
         
-        DeliveryManager.shared.deliveryClient.getItems(modelType: Cafe.self, queryParameters: [typeQueryParameter]) { (isSuccess, itemsResponse, error) in
+        DeliveryManager.shared.deliveryClient.getItems(modelType: Cafe.self, queryParameters: typeQueryParameters) { (isSuccess, itemsResponse, error) in
             if isSuccess {
                 if let cafes = itemsResponse?.items {
                     self.cafes = cafes

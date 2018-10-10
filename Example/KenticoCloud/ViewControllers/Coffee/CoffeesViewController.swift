@@ -115,9 +115,9 @@ class CoffeesViewController: ListingBaseViewController, UITableViewDelegate, UIT
     private func getCoffees() {
         self.showLoader(message: "Loading coffees...")
         
-        let contentTypeQueryParameter = QueryParameter.init(parameterKey: QueryParameterKey.type, parameterValue: contentType)
+        let contentTypeQueryParameters = [QueryParameter.init(parameterKey: QueryParameterKey.type, parameterValue: contentType)].addSampleSiteParameter()
         
-        DeliveryManager.shared.deliveryClient.getItems(modelType: Coffee.self, queryParameters: [contentTypeQueryParameter]) { (isSuccess, itemsResponse, error) in
+        DeliveryManager.shared.deliveryClient.getItems(modelType: Coffee.self, queryParameters: contentTypeQueryParameters) { (isSuccess, itemsResponse, error) in
             if isSuccess {
                 if let coffees = itemsResponse?.items {
                     
