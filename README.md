@@ -1,6 +1,6 @@
 # Kentico Cloud Swift SDK
 
-[![Travis](https://img.shields.io/travis/Kentico/cloud-sdk-swift.svg?branch=master)](https://travis-ci.org/Kentico/cloud-sdk-swift)
+[![Travis](https://travis-ci.org/Kentico/cloud-sdk-swift.svg?branch=master)](https://travis-ci.org/Kentico/cloud-sdk-swift)
 [![CocoaPods](https://img.shields.io/cocoapods/v/KenticoCloud.svg)](https://cocoapods.org/pods/KenticoCloud)
 [![CocoaPods](https://img.shields.io/cocoapods/p/KenticoCloud.svg)](https://cocoapods.org/pods/KenticoCloud)
 
