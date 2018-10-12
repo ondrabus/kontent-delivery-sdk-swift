@@ -185,9 +185,7 @@ client.getItems(modelType: Article.self, customQuery: customQuery) { (isSuccess,
  ```
  - using a query parameters array:
  ```swift
- let contentTypeQueryParameter = QueryParameter.init(parameterKey: QueryParameterKey.type, parameterValue: contentType)
-let languageQueryParameter = QueryParameter.init(parameterKey: QueryParameterKey.language, parameterValue: "es-ES")
-let coffeesQueryParameters = [contentTypeQueryParameter, languageQueryParameter]
+let coffeesQueryParameters = QueryBuilder.params().type(contentType).language("es-ES")
 client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters) { (isSuccess, itemsResponse, error) in ...
  ```
  
@@ -195,8 +193,7 @@ client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters)
  
  ```swift
  // Retrieves a list of all content items of certain type
-let contentTypeQueryParameter = QueryParameter.init(parameterKey: QueryParameterKey.type, parameterValue: "coffee")
-let coffeesQueryParameters = [contentTypeQueryParameter]
+let coffeesQueryParameters = QueryBuilder.params().type("coffee")
 client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters) { (isSuccess, itemsResponse, error) in
         if isSuccess {
             if let coffees = itemsResponse?.items {
