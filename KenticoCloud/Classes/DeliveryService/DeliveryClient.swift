@@ -285,7 +285,7 @@ public class DeliveryClient {
         }
     }
     
-    private func getItemsRequestUrl(queryParameters: [QueryParameter?]) -> String {
+    private func getItemsRequestUrl(queryParameters: [QueryParameter]) -> String {
         
         let endpoint = getEndpoint()
         
