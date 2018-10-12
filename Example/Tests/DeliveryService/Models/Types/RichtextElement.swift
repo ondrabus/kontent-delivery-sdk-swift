@@ -39,7 +39,7 @@ class RichtextElementSpec: QuickSpec {
                                     let expectedModularContentBLocksCount = 2
                                     expect(bodyCopy.type) == expectedType
                                     expect(bodyCopy.name) == expectedName
-                                    expect(bodyCopy.value?.characters.count) == expectedValueLength
+                                    expect(bodyCopy.value?.count) == expectedValueLength
                                     expect(bodyCopy.blocks.count) == expectedBlocksCount
                                     expect(bodyCopy.inlineImages.count) == expectedInlineImagesBlocksCount
                                     expect(bodyCopy.htmlContent.count) == expectedHtmlContentBlocksCount
