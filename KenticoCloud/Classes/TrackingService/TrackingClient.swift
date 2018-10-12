@@ -39,7 +39,7 @@ public class TrackingClient {
      - Parameter isSuccess: Result of the action.
      - Parameter error: Potential error.
      */
-    public func startSession(completionHandler: @escaping (_ isSuccess: Bool, _ error: Error?) -> () = { _ in }) {
+    public func startSession(completionHandler: @escaping (_ isSuccess: Bool, _ error: Error?) -> () = { _,_  in }) {
         let sessionRequestUrl = getSessionUrl()
         let body = getSessionRequestBody()
         let headers = getHeaders()
@@ -55,7 +55,7 @@ public class TrackingClient {
      - Parameter isSuccess: Result of the action.
      - Parameter error: Potential error.
      */
-    public func trackActivity(activityName: String, completionHandler: @escaping (_ isSuccess: Bool, _ error: Error?) -> () = { _ in }) {
+    public func trackActivity(activityName: String, completionHandler: @escaping (_ isSuccess: Bool, _ error: Error?) -> () = { _,_  in }) {
         
         let activityRequestUrl = getTrackActivityUrl()
         let body = getActivityRequestBody(activityName: activityName)
@@ -72,7 +72,7 @@ public class TrackingClient {
      - Parameter isSuccess: Result of the action.
      - Parameter error: Potential error.
      */
-    public func addContact(email: String, completionHandler: @escaping (_ isSuccess: Bool, _ error: Error?) -> () = { _ in }) {
+    public func addContact(email: String, completionHandler: @escaping (_ isSuccess: Bool, _ error: Error?) -> () = { _,_  in }) {
         let addContactRequestUrl = getAddContactUrl()
         let body = getAddContactRequestBody(email: email)
         let headers = getHeaders()

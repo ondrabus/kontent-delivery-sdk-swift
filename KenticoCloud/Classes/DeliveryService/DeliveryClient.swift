@@ -333,7 +333,7 @@ public class DeliveryClient {
         }
         
         // Remove last ampersand or question mark.
-        requestUrl = String(requestUrl.characters.dropLast(1))
+        requestUrl = String(requestUrl.dropLast(1))
         
         return requestUrl
     }
