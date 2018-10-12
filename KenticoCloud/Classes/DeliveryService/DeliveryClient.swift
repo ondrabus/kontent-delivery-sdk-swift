@@ -45,7 +45,7 @@ public class DeliveryClient {
      - Parameter items: Received items.
      - Parameter error: Potential error.
      */
-    public func getItems<T>(modelType: T.Type, queryParameters: [QueryParameter?], completionHandler: @escaping (_ isSuccess: Bool, _ items: ItemsResponse<T>?,_ error: Error?) -> ()) where T: Mappable {
+    public func getItems<T>(modelType: T.Type, queryParameters: [QueryParameter], completionHandler: @escaping (_ isSuccess: Bool, _ items: ItemsResponse<T>?,_ error: Error?) -> ()) where T: Mappable {
         
         let requestUrl = getItemsRequestUrl(queryParameters: queryParameters)
         sendGetItemsRequest(url: requestUrl, completionHandler: completionHandler)
