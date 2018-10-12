@@ -56,9 +56,7 @@ let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID")
  ```
 **4. Prepare a query**
 ```swift
-let typeQueryParameter = QueryParameter.init(parameterKey: QueryParameterKey.type, parameterValue: "article")
-let languageQueryParameter = QueryParameter.init(parameterKey: QueryParameterKey.language, parameterValue: "es-ES")
-let articlesQueryParameters = [typeQueryParameter, languageQueryParameter]
+let articlesQueryParameters = QueryBuilder.params().type(article).language("es-ES")
  ```
 **5. Get and use content items**
 ```swift
