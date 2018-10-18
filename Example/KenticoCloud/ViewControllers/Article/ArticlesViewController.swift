@@ -16,6 +16,7 @@ class ArticlesViewController: ListingBaseViewController, UITableViewDataSource {
     
     private let contentType = "article"
     private var articles: [Article] = []
+    private var screenName = "ArticlesView"
     
     @IBOutlet var tableView: UITableView!
     
@@ -27,10 +28,16 @@ class ArticlesViewController: ListingBaseViewController, UITableViewDataSource {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        tracker.set(kGAIScreenName, value: self.screenName)
+        
+        guard let builder = GAIDictionaryBuilder.createScreenView().set(self.screenName, forKey: kGAIScreenName) else { return}
+        
+        tracker.send(builder.build() as [NSObject : AnyObject])
+        
         if articles.count == 0 {
             getArticles()
         }
-    
     }
     
     override func didReceiveMemoryWarning() {

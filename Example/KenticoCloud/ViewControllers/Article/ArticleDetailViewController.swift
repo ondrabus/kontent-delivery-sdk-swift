@@ -14,6 +14,7 @@ class ArticleDetailViewController: UIViewController {
     
     var article: Article?
     var image: UIImage?
+    private var screenName = "ArticleDetailView"
     
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var titleImage: UIImageView!
@@ -26,6 +27,14 @@ class ArticleDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        tracker.set(kGAIScreenName, value: self.screenName)
+        
+        guard let builder = GAIDictionaryBuilder.createScreenView().set(self.screenName, forKey: kGAIScreenName) else { return}
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
     
     override func viewWillAppear(_ animated: Bool) {

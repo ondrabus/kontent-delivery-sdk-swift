@@ -15,6 +15,7 @@ class CafesViewController: ListingBaseViewController, UITableViewDataSource {
     // MARK: Properties
     
     private let contentType = "cafe"
+    private var screenName = "CafesView"
     
     var cafes: [Cafe] = []
     
@@ -29,6 +30,12 @@ class CafesViewController: ListingBaseViewController, UITableViewDataSource {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        tracker.set(kGAIScreenName, value: self.screenName)
+        
+        guard let builder = GAIDictionaryBuilder.createScreenView().set(self.screenName, forKey: kGAIScreenName) else { return}
+        tracker.send(builder.build() as [NSObject : AnyObject])
+        
         if cafes.count == 0 {
             getCafes()
         }

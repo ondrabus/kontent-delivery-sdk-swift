@@ -16,6 +16,7 @@ class CafeDetailViewController: UIViewController {
     
     var cafe: Cafe?
     var image: UIImage?
+    private var screenName = "CafeDetailViewController"
     
     @IBOutlet var name: UILabel!
     @IBOutlet var email: UILabel!
@@ -30,6 +31,14 @@ class CafeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+        tracker.set(kGAIScreenName, value: self.screenName)
+        
+        guard let builder = GAIDictionaryBuilder.createScreenView().set(self.screenName, forKey: kGAIScreenName) else { return}
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
     
     override func viewWillAppear(_ animated: Bool) {

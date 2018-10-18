@@ -121,6 +121,7 @@
 		8F7465E01F45D36300908DF5 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8F796BB51F7A751E000B5A1E /* CoffeeDescriptionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeDescriptionViewCell.swift; sourceTree = "<group>"; };
 		8F8E8CEE1F80D11C00ADEDCE /* ListingBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingBaseViewController.swift; sourceTree = "<group>"; };
+		8F99A21F21709C390070316E /* KenticoCloud-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KenticoCloud-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FA7D8A81F8E64D80057C590 /* RichtextElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichtextElement.swift; sourceTree = "<group>"; };
 		8FA7D8AA1F8E6C500057C590 /* TaxonomyElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxonomyElement.swift; sourceTree = "<group>"; };
 		8FA7D8AC1F8E6F1C0057C590 /* TextElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextElement.swift; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				8F99A21F21709C390070316E /* KenticoCloud-Bridging-Header.h */,
 				8F7465DF1F45D2EC00908DF5 /* KenticoCloud_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for KenticoCloud */,
@@ -834,6 +836,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "37a74a71-e1ab-4be2-a9c1-732d4a942a64";
 				PROVISIONING_PROFILE_SPECIFIER = "MartinM Provisioning profile";
+				SWIFT_OBJC_BRIDGING_HEADER = "KenticoCloud-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -855,6 +858,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "656aeed4-0191-45d4-9039-07713c5072ae";
 				PROVISIONING_PROFILE_SPECIFIER = "MartinM Provisioning profile";
+				SWIFT_OBJC_BRIDGING_HEADER = "KenticoCloud-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

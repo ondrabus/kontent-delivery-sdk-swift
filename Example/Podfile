@@ -3,6 +3,7 @@ use_frameworks!
 target 'KenticoCloud_Example' do
   pod 'KenticoCloud', :path => '../'
   pod 'AlamofireImage', '~> 3.1'
+  pod 'GoogleAnalytics', '~> 3.17.0’
 
   target 'KenticoCloud_Tests' do
     inherit! :search_paths
