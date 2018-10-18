@@ -119,14 +119,24 @@ Once you create a `DeliveryClient`, you can start querying your project reposito
 To retrieve unpublished content, you need to create a `DeliveryClient` with both Project ID and Preview API key. Each Kentico Cloud project has its own Preview API key. 
 
 ```swift
-// Note: Within a single project, we recommend that you work with only
-// either the production or preview Delivery API, not both.
 import KenticoCloud
 
-let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID")
+let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", previewApiKey:"PREVIEW_API_KEY")
 ```
 
 For more details, see [Previewing unpublished content using the Delivery API](https://developer.kenticocloud.com/docs/preview-content-via-api).
+
+### Getting content from secured project
+
+To retrieve content from secured project, you need to create a `DeliveryClient` with both Project ID and Secure API key. 
+
+```swift
+import KenticoCloud
+
+let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", secureApiKey:"SECURE_API_KEY")
+```
+
+For more details, see [Securing the Delivery API](https://developer.kenticocloud.com/reference#secure-access).
  
 ## Getting items
 
