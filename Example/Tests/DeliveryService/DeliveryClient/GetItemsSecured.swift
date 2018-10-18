@@ -32,7 +32,7 @@ class GetItemsSecuredSpec: QuickSpec {
                             
                             if let items = deliveryItems?.items {
                                 let itemsCount = items.count
-                                let expectedCount = 10
+                                let expectedCount = 6
                                 expect(itemsCount) == expectedCount
                                 done()
                             }
@@ -84,7 +84,7 @@ class GetItemsSecuredSpec: QuickSpec {
                             
                             if let items = deliveryItems?.items {
                                 let itemsCount = items.count
-                                let expectedCount = 10
+                                let expectedCount = 6
                                 expect(itemsCount) == expectedCount
                                 done()
                             }
