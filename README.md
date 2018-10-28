@@ -237,7 +237,7 @@ You can get linekd content items from `itemResponse` or `itemsResponse` object:
 let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID")
 client.getItem(modelType: Article.self, itemName: "on_roasts", completionHandler: { (isSuccess, itemResponse, error) in
 	if isSuccess {
-		let relatedArticle = itemResponse?.getModularContent(codename: "on_roasts", type: Article.self)
+		let relatedArticle = itemResponse?.getLinkedItems(codename: "on_roasts", type: Article.self)
 	}
 }
                             

@@ -36,14 +36,14 @@ class RichtextElementSpec: QuickSpec {
                                     let expectedBlocksCount = 14
                                     let expectedInlineImagesBlocksCount = 2
                                     let expectedHtmlContentBlocksCount = 10
-                                    let expectedModularContentBLocksCount = 2
+                                    let expectedLinkedItemsBlockCount = 2
                                     expect(bodyCopy.type) == expectedType
                                     expect(bodyCopy.name) == expectedName
                                     expect(bodyCopy.value?.count) == expectedValueLength
                                     expect(bodyCopy.blocks.count) == expectedBlocksCount
                                     expect(bodyCopy.inlineImages.count) == expectedInlineImagesBlocksCount
                                     expect(bodyCopy.htmlContent.count) == expectedHtmlContentBlocksCount
-                                    expect(bodyCopy.modularContent.count) == expectedModularContentBLocksCount
+                                    expect(bodyCopy.linkedItems.count) == expectedLinkedItemsBlockCount
                                     done()
                                 }
                         })

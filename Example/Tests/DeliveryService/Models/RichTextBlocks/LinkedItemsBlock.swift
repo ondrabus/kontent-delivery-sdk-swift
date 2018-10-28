@@ -1,5 +1,5 @@
 //
-//  ModularContentBlock.swift
+//  LinkedItemsBlockSpec.swift
 //  KenticoCloud
 //
 //  Created by Martin Makarsky on 11/10/2017.
@@ -10,9 +10,9 @@ import Quick
 import Nimble
 import KenticoCloud
 
-class ModularContentBlockSpec: QuickSpec {
+class LinkedItemsBlockSpec: QuickSpec {
     override func spec() {
-        describe("Get modular content block") {
+        describe("Get linked items block") {
             
             let client = DeliveryClient.init(projectId: TestConstants.projectId)
             
@@ -29,9 +29,9 @@ class ModularContentBlockSpec: QuickSpec {
                                     fail("Response is not successful. Error: \(String(describing: error))")
                                 }
                                 
-                                if let modularContentBlock = deliveryItem?.item?.bodyCopy?.modularContent.first {
+                                if let linkedItemsBlock = deliveryItem?.item?.bodyCopy?.linkedItems.first {
                                     let expectedName = "coffee_processing_techniques"
-                                    expect(modularContentBlock?.contentItemName) == expectedName
+                                    expect(linkedItemsBlock?.contentItemName) == expectedName
                                     done()
                                 }
                         })

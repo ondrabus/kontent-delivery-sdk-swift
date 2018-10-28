@@ -18,7 +18,7 @@ class Article: Mappable {
     var postDate: DateTimeElement?
     var summary: TextElement?
     var bodyCopy: RichTextElement?
-    var relatedContent: ModularContentElement?
+    var relatedContent: LinkedItemsElement?
     
     // MARK: Mapping
     
@@ -29,7 +29,7 @@ class Article: Mappable {
         postDate = mapper.map(elementName: "post_date", elementType: DateTimeElement.self)
         summary = mapper.map(elementName: "summary", elementType: TextElement.self)
         bodyCopy = mapper.map(elementName: "body_copy", elementType: RichTextElement.self)
-        relatedContent = mapper.map(elementName: "related_articles", elementType: ModularContentElement.self)
+        relatedContent = mapper.map(elementName: "related_articles", elementType: LinkedItemsElement.self)
     }
     
     func mapping(map: Map) {

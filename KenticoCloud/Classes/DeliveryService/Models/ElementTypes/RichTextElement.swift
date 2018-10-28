@@ -21,7 +21,7 @@ public class RichTextElement: Mappable {
     public private(set) var blocks: [Block?] = []
     public private(set) var inlineImages: [InlineImageBlock?] = []
     public private(set) var htmlContent: [HtmlContentBlock?] = []
-    public private(set) var modularContent: [ModularContentBlock?] = []
+    public private(set) var linkedItems: [LinkedItemsBlock?] = []
     public private(set) var htmlContentString: String = ""
     
     /// Maps response's json instance of the element into strongly typed object representation.
@@ -48,9 +48,9 @@ public class RichTextElement: Mappable {
                                     htmlContentString.append(contentString)
                                 }
                             case "object":
-                                if let block = ModularContentBlock.init(html: block.toHTML) {
+                                if let block = LinkedItemsBlock.init(html: block.toHTML) {
                                     self.blocks.append(block)
-                                    modularContent.append(block)
+                                    linkedItems.append(block)
                                 }
                             case "figure":
                                 if let block = InlineImageBlock.init(html: block.toHTML) {

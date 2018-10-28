@@ -1,5 +1,5 @@
 //
-//  GetModularContent.swift
+//  GetLinkedItem.swift
 //  KenticoCloud
 //
 //  Created by Martin Makarsky on 9/23/17.
@@ -10,9 +10,9 @@ import Quick
 import Nimble
 import KenticoCloud
 
-class GetModularContentItemSpec: QuickSpec {
+class GetLinkedItemSpec: QuickSpec {
     override func spec() {
-        describe("Get modular content ") {
+        describe("Get linked items ") {
             
             let client = DeliveryClient.init(projectId: TestConstants.projectId)
             
@@ -20,7 +20,7 @@ class GetModularContentItemSpec: QuickSpec {
             
             context("from ItemResponse using specific codename", {
                 
-                it("returns modular content item") {
+                it("returns linked item") {
                     waitUntil(timeout: 5) { done in
                         client.getItem(modelType: ArticleTestModel.self, itemName: "on_roasts", completionHandler: { (isSuccess, itemResponse, error) in
                             if !isSuccess {
@@ -30,7 +30,7 @@ class GetModularContentItemSpec: QuickSpec {
                             if let item = itemResponse?.item {
                                 let itemRelatedContent = item.relatedContent
                                 let originsOfArabicaCodeName = itemRelatedContent?.value?[1]
-                                let coffeeItem = itemResponse?.getModularContent(codename: originsOfArabicaCodeName!, type: ArticleTestModel.self)
+                                let coffeeItem = itemResponse?.getLinkedItems(codename: originsOfArabicaCodeName!, type: ArticleTestModel.self)
                                 expect(coffeeItem?.title?.value) == "Origins of Arabica Bourbon"
                                 done()
                             }
@@ -43,7 +43,7 @@ class GetModularContentItemSpec: QuickSpec {
             
             context("from ItemsResponse using specific codename", {
                 
-                it("returns modular content item") {
+                it("returns linked item") {
                     waitUntil(timeout: 5) { done in
                         let contentTypeParameter = QueryParameter.init(parameterKey: QueryParameterKey.type, parameterValue: "article")
                         client.getItems(modelType: ArticleTestModel.self, queryParameters: [contentTypeParameter], completionHandler:  { (isSuccess, itemsResponse, error) in
@@ -54,7 +54,7 @@ class GetModularContentItemSpec: QuickSpec {
                             if let items = itemsResponse?.items {
                                 let itemRelatedContent = items[1].relatedContent
                                 let originsOfArabicaCodeName = itemRelatedContent?.value?[0]
-                                let coffeeItem = itemsResponse?.getModularContent(codename: originsOfArabicaCodeName!, type: ArticleTestModel.self)
+                                let coffeeItem = itemsResponse?.getLinkedItems(codename: originsOfArabicaCodeName!, type: ArticleTestModel.self)
                                 expect(coffeeItem?.title?.value) == "On Roasts"
                                 done()
                             }
