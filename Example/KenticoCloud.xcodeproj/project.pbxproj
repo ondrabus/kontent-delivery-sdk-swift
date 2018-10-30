@@ -24,8 +24,6 @@
 		8F1C85541F8E48090043807B /* ModularContentBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C85431F8E48090043807B /* ModularContentBlock.swift */; };
 		8F1C85551F8E48090043807B /* ArticleTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C85461F8E48090043807B /* ArticleTestModel.swift */; };
 		8F1C85561F8E48090043807B /* CafeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C85471F8E48090043807B /* CafeTestModel.swift */; };
-		8F1C85571F8E48090043807B /* StartSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C85491F8E48090043807B /* StartSession.swift */; };
-		8F1C85581F8E48090043807B /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C854A1F8E48090043807B /* Tracking.swift */; };
 		8F1C855A1F8E48620043807B /* AssetElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C85591F8E48620043807B /* AssetElement.swift */; };
 		8F1C855C1F8E4BF90043807B /* DateTimeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C855B1F8E4BF90043807B /* DateTimeElement.swift */; };
 		8F1C855E1F8E4D860043807B /* ModularContentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C855D1F8E4D860043807B /* ModularContentElement.swift */; };
@@ -95,8 +93,6 @@
 		8F1C85431F8E48090043807B /* ModularContentBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModularContentBlock.swift; sourceTree = "<group>"; };
 		8F1C85461F8E48090043807B /* ArticleTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTestModel.swift; sourceTree = "<group>"; };
 		8F1C85471F8E48090043807B /* CafeTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeTestModel.swift; sourceTree = "<group>"; };
-		8F1C85491F8E48090043807B /* StartSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartSession.swift; sourceTree = "<group>"; };
-		8F1C854A1F8E48090043807B /* Tracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
 		8F1C85591F8E48620043807B /* AssetElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetElement.swift; sourceTree = "<group>"; };
 		8F1C855B1F8E4BF90043807B /* DateTimeElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeElement.swift; sourceTree = "<group>"; };
 		8F1C855D1F8E4D860043807B /* ModularContentElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModularContentElement.swift; sourceTree = "<group>"; };
@@ -236,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				8F1C85361F8E48090043807B /* DeliveryService */,
-				8F1C85481F8E48090043807B /* TrackingService */,
 				8FB0AC7B1F73BA4700102112 /* TestConstants.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -330,15 +325,6 @@
 				8F1C85471F8E48090043807B /* CafeTestModel.swift */,
 			);
 			path = TestModels;
-			sourceTree = "<group>";
-		};
-		8F1C85481F8E48090043807B /* TrackingService */ = {
-			isa = PBXGroup;
-			children = (
-				8F1C85491F8E48090043807B /* StartSession.swift */,
-				8F1C854A1F8E48090043807B /* Tracking.swift */,
-			);
-			path = TrackingService;
 			sourceTree = "<group>";
 		};
 		8F38071A1F6013C30008AFA1 /* CloudModels */ = {
@@ -682,7 +668,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F1C85601F8E4F140043807B /* MultipleChoiceElement.swift in Sources */,
-				8F1C85581F8E48090043807B /* Tracking.swift in Sources */,
 				8F2421091F90F09F00C3C2E9 /* GetContentType.swift in Sources */,
 				8FB0AC7C1F73BA4700102112 /* TestConstants.swift in Sources */,
 				8F1C854B1F8E48090043807B /* GetItemLive.swift in Sources */,
@@ -691,7 +676,6 @@
 				8F1C854F1F8E48090043807B /* GetModularContent.swift in Sources */,
 				8FA7D8AF1F8E6FE20057C590 /* UrlSlugElement.swift in Sources */,
 				8F1C85531F8E48090043807B /* InlineImageBlock.swift in Sources */,
-				8F1C85571F8E48090043807B /* StartSession.swift in Sources */,
 				8FA7D8A91F8E64D80057C590 /* RichtextElement.swift in Sources */,
 				8F1C855E1F8E4D860043807B /* ModularContentElement.swift in Sources */,
 				8F1C855A1F8E48620043807B /* AssetElement.swift in Sources */,
