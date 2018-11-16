@@ -5,7 +5,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/p/KenticoCloud.svg)](https://cocoapods.org/pods/KenticoCloud)
 
 ## Summary
-The KenticoCloud iOS SDK is a library used for retrieving content and tracking activities. You can use the SDK as a CocoaPod package or add it manually.
+The KenticoCloud iOS SDK is a library used for retrieving content. You can use the SDK as a CocoaPod package or add it manually.
 
 ## Sample app
 The repository contains sample app which demonstrates basic usage of the SDK.
@@ -303,28 +303,10 @@ client.getTaxonomies(completionHandler: { (isSuccess, deliveryItems, error) in
 })
 ```
 
-## Using the TrackingClient
-In order to log custom activities and add contacts you need to start a session first.
-
-### Create a session
-```swift
-let client = TrackingClient.init(projectId: "YOUR_PROJECT_ID")
-client.startSession()
-```
-### Log a custom activity
-```swift
-client.trackActivity(activityName: "madrid")
-```
-### Add a contact
-```swift
-client.addContact(email: "martinkoklingacik@local.com")
-```
-
 ## Debug
 If you want to view debug info from both clients set client's `enableDebugLogging` attribute:
 ```swift
 let deliveryClient = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", enableDebugLogging = true)
-let trackingClient = TrackingClient.init(projectId: "YOUR_PROJECT_ID", enableDebugLogging = true)
 ```
 ## Documentation
 You can find full API reference documentation [here](https://kentico.github.io/cloud-sdk-swift/index.html).
