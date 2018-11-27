@@ -20,7 +20,7 @@ public class Coffee: Mappable {
     var promotion: MultipleChoiceElement?
     var shortDescription: TextElement?
     var longDescription: RichTextElement?
-    var callToActions: ModularContentElement?
+    var callToActions: LinkedItemsElement?
     var farm: TextElement?
     var country: TextElement?
     var variety: TextElement?
@@ -39,7 +39,7 @@ public class Coffee: Mappable {
         promotion = mapper.map(elementName: "promotion", elementType: MultipleChoiceElement.self)
         shortDescription = mapper.map(elementName: "short_description", elementType: TextElement.self)
         longDescription = mapper.map(elementName: "long_description", elementType: RichTextElement.self)
-        callToActions = mapper.map(elementName: "call_to_actions", elementType: ModularContentElement.self)
+        callToActions = mapper.map(elementName: "call_to_actions", elementType: LinkedItemsElement.self)
         farm = mapper.map(elementName: "farm", elementType: TextElement.self)
         country = mapper.map(elementName: "country", elementType: TextElement.self)
         variety = mapper.map(elementName: "variety", elementType: TextElement.self)

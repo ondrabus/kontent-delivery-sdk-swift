@@ -171,7 +171,7 @@ class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITab
                 var cafes : [Cafe?] = []
                 
                 for cafeCodeName in (itemResponse?.item?.handpickedCafes?.value)! {
-                    let selectedCafe = itemResponse?.getModularContent(codename: cafeCodeName, type: Cafe.self)
+                    let selectedCafe = itemResponse?.getLinkedItems(codename: cafeCodeName, type: Cafe.self)
                     cafes.append(selectedCafe)
                     self.selectedCafes = cafes
                     

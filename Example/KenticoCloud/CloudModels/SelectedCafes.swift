@@ -13,14 +13,14 @@ class SelectedCafes: Mappable {
     
     // MARK: Properties
     
-    var handpickedCafes: ModularContentElement?
+    var handpickedCafes: LinkedItemsElement?
     
     // MARK: Mapping
     
     required init?(map: Map){
         let mapper = MapElement.init(map: map)
         
-        handpickedCafes = mapper.map(elementName: "handpicked_cafes", elementType: ModularContentElement.self)
+        handpickedCafes = mapper.map(elementName: "handpicked_cafes", elementType: LinkedItemsElement.self)
     }
     
     public func mapping(map: Map) {

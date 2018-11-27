@@ -26,16 +26,16 @@ public class ItemResponse<T>: Mappable where T: Mappable {
     }
     
     /**
-     Gets modular content from the response.
+     Gets linked items from the response.
      
-     - Parameter codename: Identifier of the modular content item.
+     - Parameter codename: Identifier of the linked item.
      - Parameter type: Type of the item. Must conform to Mappable protocol.
-     - Returns: Strongly typed modular content item.
+     - Returns: Strongly typed linked item.
      */
-    public func getModularContent<T>(codename: String, type: T.Type) -> T? where T: Mappable {
-        if let modularContentJson = self.map["modular_content.\(codename)"].currentValue {
-            let modularContentItem = Mapper<T>().map(JSONObject: modularContentJson)
-            return modularContentItem
+    public func getLinkedItems<T>(codename: String, type: T.Type) -> T? where T: Mappable {
+        if let linkedItemsJson = self.map["modular_content.\(codename)"].currentValue {
+            let linkedItem = Mapper<T>().map(JSONObject: linkedItemsJson)
+            return linkedItem
         }
         
         return nil

@@ -1,5 +1,5 @@
 //
-//  ModularContentElement.swift
+//  LinkedItemslement.swift
 //  KenticoCloud
 //
 //  Created by Martin Makarsky on 11/10/2017.
@@ -10,9 +10,9 @@ import Quick
 import Nimble
 import KenticoCloud
 
-class ModularContentElementSpec: QuickSpec {
+class LinkedItemsElementSpec: QuickSpec {
     override func spec() {
-        describe("Get modular content element") {
+        describe("Get linked items element") {
             
             let client = DeliveryClient.init(projectId: TestConstants.projectId)
             
@@ -32,12 +32,12 @@ class ModularContentElementSpec: QuickSpec {
                                 if let relatedContent = deliveryItem?.item?.relatedContent {
                                     let expectedType = "modular_content"
                                     let expectedName = "Related articles"
-                                    let expectedFstModularContentName = "coffee_processing_techniques"
-                                    let expectedSndModularContentId = "origins_of_arabica_bourbon"
+                                    let expectedFstLinkedItemName = "coffee_processing_techniques"
+                                    let expectedSndLinkedItemId = "origins_of_arabica_bourbon"
                                     expect(relatedContent.type) == expectedType
                                     expect(relatedContent.name) == expectedName
-                                    expect(relatedContent.value?[0]) == expectedFstModularContentName
-                                    expect(relatedContent.value?[1]) == expectedSndModularContentId
+                                    expect(relatedContent.value?[0]) == expectedFstLinkedItemName
+                                    expect(relatedContent.value?[1]) == expectedSndLinkedItemId
                                     done()
                                 }
                         })
