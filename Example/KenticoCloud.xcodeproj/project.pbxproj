@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107E45C0EA99AB5B0FA46E05 /* Pods_KenticoCloud_Example_KenticoCloud_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E61A8A4314F17E2FFDF5ED /* Pods_KenticoCloud_Example_KenticoCloud_Tests.framework */; };
+		439AC8E3753538286F52EFE9 /* Pods_KenticoCloud_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B647A262AADF6D1F42CC1451 /* Pods_KenticoCloud_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		68F055B16CE74B013F4050FC /* Pods_KenticoCloud_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99725F4007DE4870CB827E90 /* Pods_KenticoCloud_Tests.framework */; };
-		8155DF3642ECFF3A496A97AB /* Pods_KenticoCloud_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB3626203000465A33AC941 /* Pods_KenticoCloud_Example.framework */; };
 		8F1C854B1F8E48090043807B /* GetItemLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C85381F8E48090043807B /* GetItemLive.swift */; };
 		8F1C854C1F8E48090043807B /* GetItemPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C85391F8E48090043807B /* GetItemPreview.swift */; };
 		8F1C854D1F8E48090043807B /* GetItemsLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C853A1F8E48090043807B /* GetItemsLive.swift */; };
@@ -72,8 +72,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C08F38272A5593AC633791E /* Pods-KenticoCloud_Example-KenticoCloud_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenticoCloud_Example-KenticoCloud_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KenticoCloud_Example-KenticoCloud_Tests/Pods-KenticoCloud_Example-KenticoCloud_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		334C30581096D57AF6202B29 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		3AB3626203000465A33AC941 /* Pods_KenticoCloud_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KenticoCloud_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C016A1E98DC005C740F6B31 /* Pods-KenticoCloud_Example-KenticoCloud_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenticoCloud_Example-KenticoCloud_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KenticoCloud_Example-KenticoCloud_Tests/Pods-KenticoCloud_Example-KenticoCloud_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		43E7CC258AA24C55207C538F /* KenticoCloud.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KenticoCloud.podspec; path = ../KenticoCloud.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* KenticoCloud_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KenticoCloud_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* KenticoCloud_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KenticoCloud_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66E61A8A4314F17E2FFDF5ED /* Pods_KenticoCloud_Example_KenticoCloud_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KenticoCloud_Example_KenticoCloud_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A9A2D375E7C6DFB5BE427B /* Pods-KenticoCloud_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenticoCloud_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-KenticoCloud_Example/Pods-KenticoCloud_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8F1C85381F8E48090043807B /* GetItemLive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetItemLive.swift; sourceTree = "<group>"; };
 		8F1C85391F8E48090043807B /* GetItemPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetItemPreview.swift; sourceTree = "<group>"; };
@@ -131,12 +133,9 @@
 		8FB0ACFA1F753EDD00102112 /* CoffeeDetailCallToActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeDetailCallToActionViewController.swift; sourceTree = "<group>"; };
 		8FB0ACFC1F75422000102112 /* SelectedCafes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCafes.swift; sourceTree = "<group>"; };
 		8FF9211C1F5818BB001A95D9 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		99725F4007DE4870CB827E90 /* Pods_KenticoCloud_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KenticoCloud_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4910C3C291811E12E837C8C /* Pods-KenticoCloud_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenticoCloud_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KenticoCloud_Example/Pods-KenticoCloud_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C78DC34FAE1569A34A2D3DBA /* Pods-KenticoCloud_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenticoCloud_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KenticoCloud_Tests/Pods-KenticoCloud_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B647A262AADF6D1F42CC1451 /* Pods_KenticoCloud_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KenticoCloud_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3FB2A8517015F7223E6D1A6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		E72FCB95A095327A5FE4B4C3 /* Pods_KenticoCloud_Example_KenticoCloud_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KenticoCloud_Example_KenticoCloud_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA6AAF9FF5C8441CB45B2274 /* Pods-KenticoCloud_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenticoCloud_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KenticoCloud_Tests/Pods-KenticoCloud_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7465E11F45D36300908DF5 /* UserNotifications.framework in Frameworks */,
-				8155DF3642ECFF3A496A97AB /* Pods_KenticoCloud_Example.framework in Frameworks */,
+				439AC8E3753538286F52EFE9 /* Pods_KenticoCloud_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68F055B16CE74B013F4050FC /* Pods_KenticoCloud_Tests.framework in Frameworks */,
+				107E45C0EA99AB5B0FA46E05 /* Pods_KenticoCloud_Example_KenticoCloud_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,9 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				8F7465E01F45D36300908DF5 /* UserNotifications.framework */,
-				3AB3626203000465A33AC941 /* Pods_KenticoCloud_Example.framework */,
-				99725F4007DE4870CB827E90 /* Pods_KenticoCloud_Tests.framework */,
-				E72FCB95A095327A5FE4B4C3 /* Pods_KenticoCloud_Example_KenticoCloud_Tests.framework */,
+				B647A262AADF6D1F42CC1451 /* Pods_KenticoCloud_Example.framework */,
+				66E61A8A4314F17E2FFDF5ED /* Pods_KenticoCloud_Example_KenticoCloud_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,8 +174,8 @@
 			children = (
 				A4910C3C291811E12E837C8C /* Pods-KenticoCloud_Example.debug.xcconfig */,
 				71A9A2D375E7C6DFB5BE427B /* Pods-KenticoCloud_Example.release.xcconfig */,
-				C78DC34FAE1569A34A2D3DBA /* Pods-KenticoCloud_Tests.debug.xcconfig */,
-				FA6AAF9FF5C8441CB45B2274 /* Pods-KenticoCloud_Tests.release.xcconfig */,
+				0C08F38272A5593AC633791E /* Pods-KenticoCloud_Example-KenticoCloud_Tests.debug.xcconfig */,
+				3C016A1E98DC005C740F6B31 /* Pods-KenticoCloud_Example-KenticoCloud_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -517,8 +515,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KenticoCloud_Tests/Pods-KenticoCloud_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KenticoCloud_Example-KenticoCloud_Tests/Pods-KenticoCloud_Example-KenticoCloud_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/KenticoCloud/KenticoCloud.framework",
@@ -529,6 +528,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KenticoCloud.framework",
@@ -538,7 +538,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KenticoCloud_Tests/Pods-KenticoCloud_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KenticoCloud_Example-KenticoCloud_Tests/Pods-KenticoCloud_Example-KenticoCloud_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6932ED241652B84A3C8C082F /* [CP] Check Pods Manifest.lock */ = {
@@ -570,7 +570,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KenticoCloud_Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-KenticoCloud_Example-KenticoCloud_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -583,7 +583,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KenticoCloud_Example/Pods-KenticoCloud_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KenticoCloud_Example/Pods-KenticoCloud_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
@@ -602,7 +602,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KenticoCloud_Example/Pods-KenticoCloud_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KenticoCloud_Example/Pods-KenticoCloud_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -729,7 +729,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -769,7 +769,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -787,7 +787,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TJNU4H74H5;
 				INFOPLIST_FILE = KenticoCloud/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -808,7 +808,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TJNU4H74H5;
 				INFOPLIST_FILE = KenticoCloud/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -821,7 +821,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C78DC34FAE1569A34A2D3DBA /* Pods-KenticoCloud_Tests.debug.xcconfig */;
+			baseConfigurationReference = 0C08F38272A5593AC633791E /* Pods-KenticoCloud_Example-KenticoCloud_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -841,7 +841,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA6AAF9FF5C8441CB45B2274 /* Pods-KenticoCloud_Tests.release.xcconfig */;
+			baseConfigurationReference = 3C016A1E98DC005C740F6B31 /* Pods-KenticoCloud_Example-KenticoCloud_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
