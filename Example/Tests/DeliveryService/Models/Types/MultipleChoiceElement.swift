@@ -23,25 +23,20 @@ class MultipleChoiceElementSpec: QuickSpec {
                 it("all properties are correct") {
                     
                     waitUntil(timeout: 5) { done in
-                        client.getItem(modelType: ArticleTestModel.self, itemName: "on_roasts", completionHandler:
+                        client.getItem(modelType: HostedVideoTestModel.self, itemName: "the_coffee_story", completionHandler:
                             { (isSuccess, deliveryItem, error) in
                                 if !isSuccess {
                                     fail("Response is not successful. Error: \(String(describing: error))")
                                 }
                                 
-                                if let targetAudience = deliveryItem?.item?.targetAudience {
+                                if let videoHost = deliveryItem?.item?.videoHost {
                                     let expectedType = "multiple_choice"
-                                    let expectedName = "Target audience"
-                                    let expectedFstChoiceName = "mobile"
-                                    let expectedSndChoiceCodename = "iot"
-                                    expect(targetAudience.type) == expectedType
-                                    expect(targetAudience.name) == expectedName
-                                    expect(targetAudience.value?[0].name) == expectedFstChoiceName
-                                    expect(targetAudience.value?[1].codename) == expectedSndChoiceCodename
-                                    expect(targetAudience.containsName(name: "mobile")) == true
-                                    expect(targetAudience.containsName(name: "mobile1")) == false
-                                    expect(targetAudience.containsCodename(codename: "iot")) == true
-                                    expect(targetAudience.containsCodename(codename: "iot1")) == false
+                                    let expectedName = "Video host"
+                                    let expectedFstChoiceName = "Vimeo"
+                                    expect(videoHost.type) == expectedType
+                                    expect(videoHost.name) == expectedName
+                                    expect(videoHost.value?[0].name) == expectedFstChoiceName
+                                    expect(videoHost.containsCodename(codename: "vimeo")) == true
                                     done()
                                 }
                         })
