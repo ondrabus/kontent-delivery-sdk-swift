@@ -30,7 +30,7 @@ class InlineImageBlockSpec: QuickSpec {
                                 }
                                 
                                 if let imageBlock = deliveryItem?.item?.bodyCopy?.inlineImages.first {
-                                    let expectedDescription = "A nice cup of coffee brewed with a Chemex"
+                                    let expectedDescription = "Coffee Bean Bag"
                                     expect(imageBlock?.description) == expectedDescription
                                     done()
                                 }
@@ -53,7 +53,7 @@ class InlineImageBlockSpec: QuickSpec {
                                 }
                                 
                                 if let imageBlock = deliveryItem?.item?.bodyCopy?.inlineImages.first {
-                                    let expectedUrl = "https://assets-us-01.kc-usercontent.com:443/b48c8305-a4f7-4889-a79f-49920e673a1e/83d110b2-3bff-4b4e-9070-f6b30e7802ea/coffee-cup-mug-cafe-small.jpg"
+                                    let expectedUrl = "https://assets-us-01.kc-usercontent.com:443/24ea5db0-f8e5-0010-1822-ef5eea334bfc/55caecc2-400c-4ee3-91c3-0f7f067414ec/banner-default.jpg"
                                     expect(imageBlock?.url) == expectedUrl
                                     done()
                                 }

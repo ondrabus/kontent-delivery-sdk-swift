@@ -23,19 +23,19 @@ class NumberElementSpec: QuickSpec {
                 it("all properties are correct") {
                     
                     waitUntil(timeout: 5) { done in
-                        client.getItem(modelType: ArticleTestModel.self, itemName: "on_roasts", completionHandler:
+                        client.getItem(modelType: CoffeeTestModel.self, itemName: "brazil_natural_barra_grande", completionHandler:
                             { (isSuccess, deliveryItem, error) in
                                 if !isSuccess {
                                     fail("Response is not successful. Error: \(String(describing: error))")
                                 }
                                 
-                                if let issue = deliveryItem?.item?.issue {
+                                if let price = deliveryItem?.item?.price {
                                     let expectedType = "number"
-                                    let expectedName = "Issue"
-                                    let expectedValue = 9.0
-                                    expect(issue.type) == expectedType
-                                    expect(issue.name) == expectedName
-                                    expect(issue.value) == expectedValue
+                                    let expectedName = "Price"
+                                    let expectedValue = 8.5
+                                    expect(price.type) == expectedType
+                                    expect(price.name) == expectedName
+                                    expect(price.value) == expectedValue
                                     done()
                                 }
                         })
