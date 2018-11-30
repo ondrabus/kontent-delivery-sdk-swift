@@ -24,7 +24,6 @@ DerivedData
 
 # Pods/
 Example/Pods/*
-Example/Podfile.lock
 IDEWorkspaceChecks.plist
 
 Carthage
