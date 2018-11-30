@@ -303,6 +303,14 @@ client.getTaxonomies(completionHandler: { (isSuccess, deliveryItems, error) in
 })
 ```
 
+## Local Development
+For running SDK with sample app locally follow the next steps.
+1. Download the repository.
+1. In terminal navigate to */Example*.
+1. Run `pod install` ([Cocoapods](https://cocoapods.org/) must be installed).
+1. Open `KenticoCloud.xcworkspace` in XCode.
+1. Run.
+
 ## Debug
 If you want to view debug info from both clients set client's `enableDebugLogging` attribute:
 ```swift
