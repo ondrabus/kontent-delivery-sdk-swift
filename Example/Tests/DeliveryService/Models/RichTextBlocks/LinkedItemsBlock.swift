@@ -30,7 +30,7 @@ class LinkedItemsBlockSpec: QuickSpec {
                                 }
                                 
                                 if let linkedItemsBlock = deliveryItem?.item?.bodyCopy?.linkedItems.first {
-                                    let expectedName = "coffee_processing_techniques"
+                                    let expectedName = "how_we_roast_our_coffees"
                                     expect(linkedItemsBlock?.contentItemName) == expectedName
                                     done()
                                 }

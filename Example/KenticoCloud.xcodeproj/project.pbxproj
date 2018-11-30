@@ -58,6 +58,8 @@
 		8FB0ACF91F752FE800102112 /* CallToAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0ACF81F752FE800102112 /* CallToAction.swift */; };
 		8FB0ACFB1F753EDD00102112 /* CoffeeDetailCallToActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0ACFA1F753EDD00102112 /* CoffeeDetailCallToActionViewController.swift */; };
 		8FB0ACFD1F75422000102112 /* SelectedCafes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0ACFC1F75422000102112 /* SelectedCafes.swift */; };
+		8FF0AC4421AED2EE00783FF9 /* CoffeeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF0AC4221AED21200783FF9 /* CoffeeTestModel.swift */; };
+		8FF0AC4721AED3F000783FF9 /* HostedVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF0AC4521AED3EE00783FF9 /* HostedVideo.swift */; };
 		8FF9211D1F5818BB001A95D9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF9211C1F5818BB001A95D9 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,8 @@
 		8FB0ACF81F752FE800102112 /* CallToAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallToAction.swift; sourceTree = "<group>"; };
 		8FB0ACFA1F753EDD00102112 /* CoffeeDetailCallToActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeDetailCallToActionViewController.swift; sourceTree = "<group>"; };
 		8FB0ACFC1F75422000102112 /* SelectedCafes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCafes.swift; sourceTree = "<group>"; };
+		8FF0AC4221AED21200783FF9 /* CoffeeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeTestModel.swift; sourceTree = "<group>"; };
+		8FF0AC4521AED3EE00783FF9 /* HostedVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedVideo.swift; sourceTree = "<group>"; };
 		8FF9211C1F5818BB001A95D9 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		99725F4007DE4870CB827E90 /* Pods_KenticoCloud_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KenticoCloud_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4910C3C291811E12E837C8C /* Pods-KenticoCloud_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenticoCloud_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KenticoCloud_Example/Pods-KenticoCloud_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 			children = (
 				8F1C85461F8E48090043807B /* ArticleTestModel.swift */,
 				8F1C85471F8E48090043807B /* CafeTestModel.swift */,
+				8FF0AC4221AED21200783FF9 /* CoffeeTestModel.swift */,
+				8FF0AC4521AED3EE00783FF9 /* HostedVideo.swift */,
 			);
 			path = TestModels;
 			sourceTree = "<group>";
@@ -657,9 +663,11 @@
 				8F1C855C1F8E4BF90043807B /* DateTimeElement.swift in Sources */,
 				8F1C85511F8E48090043807B /* GetTaxonomyGroup.swift in Sources */,
 				8FA7D8AB1F8E6C500057C590 /* TaxonomyElement.swift in Sources */,
+				8FF0AC4421AED2EE00783FF9 /* CoffeeTestModel.swift in Sources */,
 				8FA7D8AD1F8E6F1C0057C590 /* TextElement.swift in Sources */,
 				8F1C854D1F8E48090043807B /* GetItemsLive.swift in Sources */,
 				8F2421051F90E17200C3C2E9 /* GetContentTypes.swift in Sources */,
+				8FF0AC4721AED3F000783FF9 /* HostedVideo.swift in Sources */,
 				8F1C85561F8E48090043807B /* CafeTestModel.swift in Sources */,
 				8F1C85551F8E48090043807B /* ArticleTestModel.swift in Sources */,
 				8F2F79C0217903DD0005A828 /* GetItemsSecured.swift in Sources */,
