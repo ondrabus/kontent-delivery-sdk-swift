@@ -319,6 +319,12 @@ let deliveryClient = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", enableDeb
 ## Documentation
 You can find full API reference documentation [here](https://kentico.github.io/cloud-sdk-swift/index.html).
 
+## Updating generated documentation
+We use Jazzy which is a command-line utility that generates documentation for Swift. For updating documentation perform the next steps:
+1. Install Jazzy `[sudo] gem install jazzy`
+1. Run `jazzy` from the root of the repository.
+1. Commit changes from */Docs* directory.
+
 ## Further information
 
 For more developer resources, visit the Kentico Cloud Developer Hub at <https://developer.kenticocloud.com>.
