@@ -1,0 +1,48 @@
+PODS:
+  - Alamofire (4.8.0)
+  - AlamofireImage (3.4.1):
+    - Alamofire (~> 4.7)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - Kanna (4.0.2)
+  - KenticoCloud (1.0.0):
+    - AlamofireObjectMapper (~> 5.2.0)
+    - Kanna (~> 4.0.2)
+  - Nimble (7.3.1)
+  - ObjectMapper (3.4.1)
+  - Quick (1.3.2)
+
+DEPENDENCIES:
+  - AlamofireImage (~> 3.4.1)
+  - KenticoCloud (from `../`)
+  - Nimble (~> 7.3.1)
+  - Quick (~> 1.3.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - AlamofireObjectMapper
+    - Kanna
+    - Nimble
+    - ObjectMapper
+    - Quick
+
+EXTERNAL SOURCES:
+  KenticoCloud:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  Kanna: c60b61d72554bf04ed1ee074f9b379855cab4892
+  KenticoCloud: c7c440e47f96267f43426ba484177b5b231a800e
+  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
+  Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
+
+PODFILE CHECKSUM: f61abcd6f38ddf488118aa6e6765ca46e05a13ce
+
+COCOAPODS: 1.6.0.beta.2
