@@ -18,7 +18,6 @@ class ArticlesViewController: ListingBaseViewController, UITableViewDataSource {
     private var articles: [Article] = []
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var refreshControl: UIRefreshControl!
     
     // MARK: Lifecycle
     
@@ -59,9 +58,15 @@ class ArticlesViewController: ListingBaseViewController, UITableViewDataSource {
             cell.date.text = date.getDateString()
         }
         
-        if let imageUrl = article.asset?.value?[0].url {
-            let url = URL(string: imageUrl)
-            cell.photo.af_setImage(withURL: url!)
+        if let assets = article.asset?.value {
+            if assets.count > 0 {
+                let url = URL(string: assets[0].url!)
+                cell.photo.af_setImage(withURL: url!)
+            } else {
+                cell.photo.image = UIImage(named: "noContent")
+            }
+        } else {
+            cell.photo.image = UIImage(named: "noContent")
         }
         
         return cell
@@ -77,7 +82,12 @@ class ArticlesViewController: ListingBaseViewController, UITableViewDataSource {
             articleDetailViewController.article = articles[indexPath.row]
             
             let cell = self.tableView.cellForRow(at: indexPath) as! ArticleTableViewCell
-            articleDetailViewController.image = cell.photo.image!
+            
+            if let image = cell.photo.image {
+                articleDetailViewController.image = image
+            } else {
+                articleDetailViewController.image = UIImage(named: "noContent")
+            }
         }
         
         if let index = self.tableView.indexPathForSelectedRow{
@@ -98,8 +108,9 @@ class ArticlesViewController: ListingBaseViewController, UITableViewDataSource {
         
         let cloudClient = DeliveryClient.init(projectId: AppConstants.projectId)
         let customQuery = "items?system.type=article&order=elements.post_date[desc]"
-        
+
         cloudClient.getItems(modelType: Article.self, customQuery: customQuery) { (isSuccess, itemsResponse, error) in
+
             if isSuccess {
                 if let articles = itemsResponse?.items {
                     self.articles = articles
@@ -111,12 +122,18 @@ class ArticlesViewController: ListingBaseViewController, UITableViewDataSource {
                 }
             }
             
-            if self.refreshControl.isRefreshing {
-                self.refreshControl.endRefreshing()
+            DispatchQueue.main.async {
+                self.finishLoadingItems()
             }
-            
-            self.hideLoader()
         }
+    }
+    
+    func finishLoadingItems() {
+        self.hideLoader()
+        self.tableView.refreshControl?.endRefreshing()
+        UIView.animate(withDuration: 0.3, animations: {
+            self.tableView.contentOffset = CGPoint.zero
+        })
     }
 }
 

@@ -56,7 +56,6 @@
 		8FA925081F7A2E84008FD6C8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA925071F7A2E84008FD6C8 /* Extensions.swift */; };
 		8FB0AC7C1F73BA4700102112 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0AC7B1F73BA4700102112 /* TestConstants.swift */; };
 		8FB0ACF91F752FE800102112 /* CallToAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0ACF81F752FE800102112 /* CallToAction.swift */; };
-		8FB0ACFB1F753EDD00102112 /* CoffeeDetailCallToActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0ACFA1F753EDD00102112 /* CoffeeDetailCallToActionViewController.swift */; };
 		8FB0ACFD1F75422000102112 /* SelectedCafes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0ACFC1F75422000102112 /* SelectedCafes.swift */; };
 		8FF0AC4421AED2EE00783FF9 /* CoffeeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF0AC4221AED21200783FF9 /* CoffeeTestModel.swift */; };
 		8FF0AC4721AED3F000783FF9 /* HostedVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF0AC4521AED3EE00783FF9 /* HostedVideo.swift */; };
@@ -132,7 +131,6 @@
 		8FA925071F7A2E84008FD6C8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8FB0AC7B1F73BA4700102112 /* TestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		8FB0ACF81F752FE800102112 /* CallToAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallToAction.swift; sourceTree = "<group>"; };
-		8FB0ACFA1F753EDD00102112 /* CoffeeDetailCallToActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeDetailCallToActionViewController.swift; sourceTree = "<group>"; };
 		8FB0ACFC1F75422000102112 /* SelectedCafes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCafes.swift; sourceTree = "<group>"; };
 		8FF0AC4221AED21200783FF9 /* CoffeeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeTestModel.swift; sourceTree = "<group>"; };
 		8FF0AC4521AED3EE00783FF9 /* HostedVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedVideo.swift; sourceTree = "<group>"; };
@@ -381,7 +379,6 @@
 			children = (
 				8F3807281F6013C30008AFA1 /* CoffeesViewController.swift */,
 				8F3807271F6013C30008AFA1 /* CoffeeDetailViewController.swift */,
-				8FB0ACFA1F753EDD00102112 /* CoffeeDetailCallToActionViewController.swift */,
 			);
 			path = Coffee;
 			sourceTree = "<group>";
@@ -636,7 +633,6 @@
 				8FA925081F7A2E84008FD6C8 /* Extensions.swift in Sources */,
 				8F3807361F6013C30008AFA1 /* CafesViewController.swift in Sources */,
 				8FB0ACF91F752FE800102112 /* CallToAction.swift in Sources */,
-				8FB0ACFB1F753EDD00102112 /* CoffeeDetailCallToActionViewController.swift in Sources */,
 				8F38073D1F6013C30008AFA1 /* CoffeeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
