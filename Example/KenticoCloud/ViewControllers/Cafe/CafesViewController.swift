@@ -15,11 +15,11 @@ class CafesViewController: ListingBaseViewController, UITableViewDataSource {
     // MARK: Properties
     
     private let contentType = "cafe"
+    private var screenName = "CafesView"
     
     var cafes: [Cafe] = []
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var refreshControl: UIRefreshControl!
     
     // MARK: Lifecycle
     
@@ -61,6 +61,8 @@ class CafesViewController: ListingBaseViewController, UITableViewDataSource {
         if let imageUrl = cafe.imageUrl {
             let url = URL(string: imageUrl)
             cell.photo.af_setImage(withURL: url!)
+        } else {
+            cell.photo.image = UIImage(named: "noContent")
         }
         
         return cell
@@ -96,7 +98,7 @@ class CafesViewController: ListingBaseViewController, UITableViewDataSource {
         self.showLoader(message: "Loading cafes...")
         
         let cloudClient = DeliveryClient.init(projectId: AppConstants.projectId)
-        
+
         let typeQueryParameter = QueryParameter.init(parameterKey: QueryParameterKey.type, parameterValue: contentType)
         
         cloudClient.getItems(modelType: Cafe.self, queryParameters: [typeQueryParameter]) { (isSuccess, itemsResponse, error) in
@@ -111,12 +113,18 @@ class CafesViewController: ListingBaseViewController, UITableViewDataSource {
                 }
             }
             
-            if self.refreshControl.isRefreshing {
-                self.refreshControl.endRefreshing()
+            DispatchQueue.main.async {
+                self.finishLoadingItems()
             }
-            
-            self.hideLoader()
         }
+    }
+    
+    func finishLoadingItems() {
+        self.hideLoader()
+        self.tableView.refreshControl?.endRefreshing()
+        UIView.animate(withDuration: 0.3, animations: {
+            self.tableView.contentOffset = CGPoint.zero
+        })
     }    
 }
 

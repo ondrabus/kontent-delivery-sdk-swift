@@ -15,9 +15,6 @@ class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
     var coffee: Coffee!
     
-    private var callToAction: CallToAction?
-    private var selectedCafes: [Cafe?] = []
-    
     @IBOutlet var backButton: UIButton!
     @IBOutlet var tableView: UITableView!
     
@@ -28,11 +25,7 @@ class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet var altitude: UILabel!
     @IBOutlet var coffeeImage: UIImageView!
     
-    @IBOutlet var ctaView: UIView!
-    @IBOutlet var callToActionButton: UIButton!
-    @IBOutlet var ctaImage: UIImageView!
-    @IBOutlet var ctaSubtitle: UILabel!
-    @IBOutlet var ctaTitle: UILabel!
+    private var screenName = "CoffeeDetailView"
     
     // MARK: Lifecycle
     
@@ -44,8 +37,6 @@ class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        ctaView.removeFromSuperview()
-        callToActionButton.stylePinkButton()
         backButton.stylePinkButton()
         
         setContent()
@@ -75,17 +66,6 @@ class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITab
         return UITableViewAutomaticDimension;
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "coffeeDetailCtaSegue" {
-            
-            let coffeeDetailCtaViewController = segue.destination
-                as! CoffeeDetailCallToActionViewController
-            
-            coffeeDetailCtaViewController.callToAction = callToAction
-            coffeeDetailCtaViewController.cafes = selectedCafes
-        }
-    }
-    
     // MARK: Outlet actions
     
     @IBAction func navigateBack(_ sender: Any) {
@@ -94,30 +74,7 @@ class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
     // MARK: Behaviour
     
-    /// Updates Call to Action view if there is cto AND selected cafes
-    private func tryToUpdateCallToActionView() {
-        if let titleText = self.callToAction?.actionButtonText?.value {
-            if selectedCafes.count > 0 {
-                callToActionButton.setTitle(titleText, for: .normal)
-                
-                if let imageUrl = callToAction?.image?.value?[0].url {
-                    let url = URL(string: imageUrl)
-                    ctaImage.af_setImage(withURL: url!)
-                }
-                
-                ctaSubtitle.text = callToAction?.shortText?.value
-                ctaTitle.text = callToAction?.title?.value
-                
-                tableView.addSubview(ctaView)
-            }
-        }
-    }
-    
     private func setContent() {
-        if let callToActionNames = coffee.callToActions?.value {
-            getCoffeeEnthusiastCta(callToActionNames: callToActionNames)
-        }
-        
         if let price = coffee.price?.value {
             self.price.text = "$\(price) / 1lb"
         }
@@ -134,53 +91,17 @@ class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITab
         if let altitude = coffee.altitude?.value {
             self.altitude.text = "\(altitude) ft"
         }
-        
-        if let imageUrl = coffee.photo?.value?[0].url {
-            let url = URL(string: imageUrl)
-            coffeeImage.af_setImage(withURL: url!)
-        }
-    }
-    
-    // MARK: Getting items
-    
-    /// Get Call to Action for Coffee enthusiast persona only
-    private func getCoffeeEnthusiastCta(callToActionNames: [String?]) {
-        
-        for callToActionName in callToActionNames {
-            if let ctoName = callToActionName {
-                let client = DeliveryClient.init(projectId: AppConstants.projectId)
-                client.getItem(modelType: CallToAction.self, itemName: ctoName, completionHandler: {isSuccess, itemResponse, error in
-                    if isSuccess {
-                        if let cto = itemResponse?.item {
-                            if (cto.persona?.containsName(name: "Coffee enthusiast"))! {
-                                self.callToAction = cto
-                                self.tryToUpdateCallToActionView()
-                            }
-                        }
-                    } else {
-                        print("Error while getting CTOs. Error: \(String(describing: error))")
-                    }
-                })
-            }
-        }
-        
-        /// Get SelectedCafes
-        let client = DeliveryClient.init(projectId: AppConstants.projectId)
-        client.getItem(modelType: SelectedCafes.self, itemName: "cafes_in_your_area", completionHandler: {isSuccess, itemResponse, error in
-            if isSuccess {
-                var cafes : [Cafe?] = []
-                
-                for cafeCodeName in (itemResponse?.item?.handpickedCafes?.value)! {
-                    let selectedCafe = itemResponse?.getLinkedItems(codename: cafeCodeName, type: Cafe.self)
-                    cafes.append(selectedCafe)
-                    self.selectedCafes = cafes
-                    
-                    self.selectedCafes = cafes as! [Cafe]
-                    self.tryToUpdateCallToActionView()
-                }
+
+        if let assets = coffee.image?.value {
+            if assets.count > 0 {
+                let url = URL(string: assets[0].url!)
+                coffeeImage.af_setImage(withURL: url!)
             } else {
-                print("Error while getting CTOs. Error: \(String(describing: error))")
+                coffeeImage.image = UIImage(named: "noContent")
             }
-        })
+        } else {
+            coffeeImage.image = UIImage(named: "noContent")
+        }
     }
+    
 }
