@@ -8,7 +8,7 @@
 The KenticoCloud iOS SDK is a library used for retrieving content. You can use the SDK as a CocoaPod package or add it manually.
 
 ### Sample app
-The repository contains sample app which demonstrates basic usage of the SDK.
+The repository contains sample app which demonstrates basic usage of the SDK. It displays content from a Sample Project that demonstrates Kentico Cloud features and best practices. This fully featured project contains marketing content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any admin of a Kentico Cloud subscription [can generate one](https://app.kenticocloud.com/sample-project-generator). 
 
 <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/splashScreens.png?raw=true" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/locations.png?raw=true" width="212">
 
