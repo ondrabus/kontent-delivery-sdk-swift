@@ -87,6 +87,8 @@ class CafeDetailViewController: UIViewController {
     private func setImages() {
         if (photo) != nil {
             self.photo.image = image
+        } else {
+            self.photo.image = UIImage(named: "noContent")
         }
     }
 }

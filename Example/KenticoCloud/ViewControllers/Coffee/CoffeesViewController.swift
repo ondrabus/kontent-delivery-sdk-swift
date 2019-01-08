@@ -17,7 +17,6 @@ class CoffeesViewController: ListingBaseViewController, UITableViewDelegate, UIT
     private var coffees: [Coffee] = []
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var refreshControl: UIRefreshControl!
     
     // MARK: Lifecycle
     
@@ -28,7 +27,7 @@ class CoffeesViewController: ListingBaseViewController, UITableViewDelegate, UIT
         tableView.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {  
         if coffees.count == 0 {
             getCoffees()
         }
@@ -54,7 +53,9 @@ class CoffeesViewController: ListingBaseViewController, UITableViewDelegate, UIT
         let coffee = coffees[indexPath.row]
         
         cell.title.text = coffee.name?.value
-        cell.coffeeDescription.text = coffee.shortDescription?.value
+        if let description = coffee.shortDescription?.htmlContentString {
+            cell.coffeeDescription.styleWithRichtextString(richtextString: description)
+        }
         
         if let price = coffee.price?.value {
             cell.price.text = "$ \(price) / 1lb"
@@ -66,9 +67,15 @@ class CoffeesViewController: ListingBaseViewController, UITableViewDelegate, UIT
             }
         }
         
-        if let imageUrl = coffee.photo?.value?[0].url {
-            let url = URL(string: imageUrl)
-            cell.photo.af_setImage(withURL: url!)
+        if let assets = coffee.image?.value {
+            if assets.count > 0 {
+                let url = URL(string: assets[0].url!)
+                cell.photo.af_setImage(withURL: url!)
+            } else {
+                cell.photo.image = UIImage(named: "noContent")
+            }
+        } else {
+            cell.photo.image = UIImage(named: "noContent")
         }
         
         if (coffee.promotion?.containsCodename(codename: "featured"))! {
@@ -126,11 +133,17 @@ class CoffeesViewController: ListingBaseViewController, UITableViewDelegate, UIT
                 }
             }
             
-            if self.refreshControl.isRefreshing {
-                self.refreshControl.endRefreshing()
+            DispatchQueue.main.async {
+                self.finishLoadingItems()
             }
-            
-            self.hideLoader()
         }
+    }
+    
+    func finishLoadingItems() {
+        self.hideLoader()
+        self.tableView.refreshControl?.endRefreshing()
+        UIView.animate(withDuration: 0.3, animations: {
+            self.tableView.contentOffset = CGPoint.zero
+        })
     }
 }
