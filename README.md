@@ -237,7 +237,9 @@ You can get linked content items from `itemResponse` or `itemsResponse` object:
 let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID")
 client.getItem(modelType: Article.self, itemName: "on_roasts", completionHandler: { (isSuccess, itemResponse, error) in
 	if isSuccess {
-		let relatedArticle = itemResponse?.getLinkedItems(codename: "on_roasts", type: Article.self)
+		for articleCodeName in (itemResponse?.item?.relatedArticles?.value)! {
+            		let relatedArticle = itemResponse?.getLinkedItems(codename: articleCodeName, type: Article.self)
+        	}
 	}
 }
                             
