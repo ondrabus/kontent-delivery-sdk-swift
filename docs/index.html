@@ -135,12 +135,12 @@
 <a href="https://cocoapods.org/pods/KenticoCloud"><img src="https://img.shields.io/cocoapods/p/KenticoCloud.svg" alt="CocoaPods"></a></p>
 <h2 id='summary' class='heading'>Summary</h2>
 
-<p>The KenticoCloud iOS SDK is a library used for retrieving content and tracking activities. You can use the SDK as a CocoaPod package or add it manually.</p>
-<h2 id='sample-app' class='heading'>Sample app</h2>
+<p>The KenticoCloud iOS SDK is a library used for retrieving content. You can use the SDK as a CocoaPod package or add it manually.</p>
+<h3 id='sample-app' class='heading'>Sample app</h3>
 
 <p>The repository contains sample app which demonstrates basic usage of the SDK.</p>
 
-<p><img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/splashScreens.png" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/locations.png" width="212"></p>
+<p><img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/splashScreens.png?raw=true" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/locations.png?raw=true" width="212"></p>
 <h2 id='quick-start' class='heading'>Quick start</h2>
 
 <p><strong>1. Add a pod</strong>  </p>
@@ -345,11 +345,13 @@ client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters)
 </code></pre>
 <h3 id='getting-linked-items' class='heading'>Getting linked items</h3>
 
-<p>You can get linekd content items from <code>itemResponse</code> or <code>itemsResponse</code> object:</p>
+<p>You can get linked content items from <code>itemResponse</code> or <code>itemsResponse</code> object:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="nf">getItem</span><span class="p">(</span><span class="nv">modelType</span><span class="p">:</span> <span class="kt">Article</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">itemName</span><span class="p">:</span> <span class="s">"on_roasts"</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccess</span><span class="p">,</span> <span class="n">itemResponse</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
     <span class="k">if</span> <span class="n">isSuccess</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">relatedArticle</span> <span class="o">=</span> <span class="n">itemResponse</span><span class="p">?</span><span class="o">.</span><span class="nf">getLinkedItems</span><span class="p">(</span><span class="nv">codename</span><span class="p">:</span> <span class="s">"on_roasts"</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">Article</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">articleCodeName</span> <span class="nf">in</span> <span class="p">(</span><span class="n">itemResponse</span><span class="p">?</span><span class="o">.</span><span class="n">item</span><span class="p">?</span><span class="o">.</span><span class="n">relatedArticles</span><span class="p">?</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">!</span> <span class="p">{</span>
+                    <span class="k">let</span> <span class="nv">relatedArticle</span> <span class="o">=</span> <span class="n">itemResponse</span><span class="p">?</span><span class="o">.</span><span class="nf">getLinkedItems</span><span class="p">(</span><span class="nv">codename</span><span class="p">:</span> <span class="n">articleCodeName</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">Article</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+            <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -407,28 +409,37 @@ client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters)
     <span class="p">}</span>
 <span class="p">})</span>
 </code></pre>
-<h2 id='using-the-trackingclient' class='heading'>Using the TrackingClient</h2>
+<h2 id='local-development' class='heading'>Local Development</h2>
 
-<p>In order to log custom activities and add contacts you need to start a session first.</p>
-<h3 id='create-a-session' class='heading'>Create a session</h3>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">TrackingClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">)</span>
-<span class="n">client</span><span class="o">.</span><span class="nf">startSession</span><span class="p">()</span>
-</code></pre>
-<h3 id='log-a-custom-activity' class='heading'>Log a custom activity</h3>
-<pre class="highlight swift"><code><span class="n">client</span><span class="o">.</span><span class="nf">trackActivity</span><span class="p">(</span><span class="nv">activityName</span><span class="p">:</span> <span class="s">"madrid"</span><span class="p">)</span>
-</code></pre>
-<h3 id='add-a-contact' class='heading'>Add a contact</h3>
-<pre class="highlight swift"><code><span class="n">client</span><span class="o">.</span><span class="nf">addContact</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span> <span class="s">"martinkoklingacik@local.com"</span><span class="p">)</span>
-</code></pre>
+<p>For running SDK with sample app locally follow the next steps.</p>
+
+<ol>
+<li>Download the repository.</li>
+<li>In terminal navigate to <em>/Example</em>.</li>
+<li>Run <code>pod install</code> (<a href="https://cocoapods.org/">Cocoapods</a> must be installed).</li>
+<li>Open <code>KenticoCloud.xcworkspace</code> in XCode.</li>
+<li>Run.</li>
+</ol>
 <h2 id='debug' class='heading'>Debug</h2>
 
 <p>If you want to view debug info from both clients set client&rsquo;s <code>enableDebugLogging</code> attribute:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">deliveryClient</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">,</span> <span class="n">enableDebugLogging</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
-<span class="k">let</span> <span class="nv">trackingClient</span> <span class="o">=</span> <span class="kt">TrackingClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">,</span> <span class="n">enableDebugLogging</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
 </code></pre>
+<h2 id='releasing-a-new-version-of-the-cocoapod-package' class='heading'>Releasing a new version of the Cocoapod package</h2>
+
+<p>Follow <a href="https://guides.cocoapods.org/making/making-a-cocoapod.html">official instructions</a>.</p>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
 <p>You can find full API reference documentation <a href="https://kentico.github.io/cloud-sdk-swift/index.html">here</a>.</p>
+<h2 id='updating-generated-documentation' class='heading'>Updating generated documentation</h2>
+
+<p>We use Jazzy which is a command-line utility that generates documentation for Swift. For updating documentation perform the next steps:</p>
+
+<ol>
+<li>Install Jazzy <code>[sudo] gem install jazzy</code></li>
+<li>Run <code>jazzy</code> from the root of the repository.</li>
+<li>Commit changes from <em>/Docs</em> directory.</li>
+</ol>
 <h2 id='further-information' class='heading'>Further information</h2>
 
 <p>For more developer resources, visit the Kentico Cloud Developer Hub at <a href="https://developer.kenticocloud.com">https://developer.kenticocloud.com</a>.</p>
@@ -444,8 +455,8 @@ client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters)
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/kentico/cloud-sdk-swift" target="_blank" rel="external">Martin Makarsky</a>. All rights reserved. (Last updated: 2018-10-28)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/kentico/cloud-sdk-swift" target="_blank" rel="external">Martin Makarsky</a>. All rights reserved. (Last updated: 2019-01-08)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
