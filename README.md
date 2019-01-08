@@ -16,7 +16,7 @@ The repository contains sample app which demonstrates basic usage of the SDK.
 **1. Add a pod**  
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '12.0'
 use_frameworks!
 
 target '<Your Target Name>' do
