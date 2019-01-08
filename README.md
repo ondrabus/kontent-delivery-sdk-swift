@@ -318,6 +318,10 @@ If you want to view debug info from both clients set client's `enableDebugLoggin
 ```swift
 let deliveryClient = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", enableDebugLogging = true)
 ```
+
+## Releasing a new version of the Cocoapod package
+Follow [official instructions] (https://guides.cocoapods.org/making/making-a-cocoapod.html).
+
 ## Documentation
 You can find full API reference documentation [here](https://kentico.github.io/cloud-sdk-swift/index.html).
 
