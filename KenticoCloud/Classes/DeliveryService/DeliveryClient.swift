@@ -175,7 +175,7 @@ public class DeliveryClient {
         sendGetTaxonomyRequest(url: requestUrl, completionHandler: completionHandler)
     }
     
-    private func sendGetItemsRequest<T>(url: String, attemptedNumber: Int = 0, completionHandler: @escaping (Bool, ItemsResponse<T>?, Error?) -> ()) where T: Mappable {
+    private func sendGetItemsRequest<T>(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ItemsResponse<T>?, Error?) -> ()) where T: Mappable {
         Alamofire.request(url, headers: self.headers).responseObject { (response: DataResponse<ItemsResponse<T>>) in
             
             switch response.result {
@@ -192,7 +192,8 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting items action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber < self.maxRetryAttempts {
+                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
+                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
                     self.sendGetItemsRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
                 } else {
                     completionHandler(false, nil, error)
@@ -201,7 +202,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetItemRequest<T>(url: String, attemptedNumber: Int = 0, completionHandler: @escaping (Bool, ItemResponse<T>?, Error?) -> ()) where T: Mappable {
+    private func sendGetItemRequest<T>(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ItemResponse<T>?, Error?) -> ()) where T: Mappable {
         Alamofire.request(url, headers: self.headers).responseObject() { (response: DataResponse<ItemResponse<T>>) in
             
             switch response.result {
@@ -217,7 +218,8 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting items action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber < self.maxRetryAttempts {
+                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
+                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
                     self.sendGetItemRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
                 } else {
                     completionHandler(false, nil, error)
@@ -226,7 +228,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetContentTypesRequest(url: String, attemptedNumber: Int = 0, completionHandler: @escaping (Bool, ContentTypesResponse?, Error?) -> ()) {
+    private func sendGetContentTypesRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ContentTypesResponse?, Error?) -> ()) {
         Alamofire.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentTypesResponse>) in
             
             switch response.result {
@@ -242,7 +244,8 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting content types action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber < self.maxRetryAttempts {
+                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
+                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
                     self.sendGetContentTypesRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
                 } else {
                     completionHandler(false, nil, error)
@@ -251,7 +254,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetContentTypeRequest(url: String, attemptedNumber: Int = 0, completionHandler: @escaping (Bool, ContentType?, Error?) -> ()) {
+    private func sendGetContentTypeRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ContentType?, Error?) -> ()) {
         Alamofire.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentType>) in
             
             switch response.result {
@@ -266,7 +269,8 @@ public class DeliveryClient {
                 if self.isDebugLoggingEnabled {
                     print("[Kentico Cloud] Getting content types action has failed. Check requested URL: \(url)")
                 }
-                if self.isRetryEnabled && attemptedNumber < self.maxRetryAttempts {
+                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
+                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
                     self.sendGetContentTypeRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
                 } else {
                     completionHandler(false, nil, error)
@@ -275,7 +279,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetTaxonomiesRequest(url: String, attemptedNumber: Int = 0, completionHandler: @escaping (Bool, [TaxonomyGroup]?, Error?) -> ()) {
+    private func sendGetTaxonomiesRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, [TaxonomyGroup]?, Error?) -> ()) {
         Alamofire.request(url, headers: self.headers).responseArray(keyPath: "taxonomies") { (response: DataResponse<[TaxonomyGroup]>) in
             
             switch response.result {
@@ -291,7 +295,8 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting taxonomies action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber < self.maxRetryAttempts {
+                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
+                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
                     self.sendGetTaxonomiesRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
                 } else {
                     completionHandler(false, nil, error)
@@ -300,7 +305,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetTaxonomyRequest(url: String, attemptedNumber: Int = 0, completionHandler: @escaping (Bool, TaxonomyGroup?, Error?) -> ()) {
+    private func sendGetTaxonomyRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, TaxonomyGroup?, Error?) -> ()) {
         Alamofire.request(url, headers: self.headers).responseObject { (response: DataResponse<TaxonomyGroup>) in
             
             switch response.result {
@@ -316,13 +321,18 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting taxonomies action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber < self.maxRetryAttempts {
+                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
+                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
                     self.sendGetTaxonomyRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
                 } else {
                     completionHandler(false, nil, error)
                 }
             }
         }
+    }
+
+    private func waitForRetry(withAttemptedNumber attemptedNumber: Int) {
+        Thread.sleep(forTimeInterval: (pow(2, attemptedNumber + 1) as NSDecimalNumber).doubleValue * 0.1)
     }
     
     private func getItemsRequestUrl(queryParameters: [QueryParameter]) -> String {
