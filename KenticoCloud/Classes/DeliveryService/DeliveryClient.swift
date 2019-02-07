@@ -18,6 +18,8 @@ public class DeliveryClient {
     private var secureApiKey: String?
     private var headers: HTTPHeaders?
     private var isDebugLoggingEnabled: Bool
+    private var isRetryEnabled: Bool
+    private var maxRetryAttempts: Int
     
     /**
      Inits delivery client instance.
@@ -29,12 +31,20 @@ public class DeliveryClient {
      - Parameter enableDebugLogging: Flag for logging debug messages.
      - Returns: Instance of the DeliveryClient.
      */
-    public init(projectId: String, previewApiKey: String? = nil, secureApiKey: String? = nil, enableDebugLogging: Bool = false) {
+    public init(projectId: String, previewApiKey: String? = nil, secureApiKey: String? = nil, enableDebugLogging: Bool = false,
+                isRetryEnabled: Bool = true, maxRetryAttempts: Int = 5) {
         self.projectId = projectId
         self.previewApiKey = previewApiKey
         self.secureApiKey = secureApiKey
         self.isDebugLoggingEnabled = enableDebugLogging
+        self.isRetryEnabled = isRetryEnabled
+        self.maxRetryAttempts = maxRetryAttempts
         self.headers = getHeaders()
+    }
+
+    public func setRetryAttribute(isRetryEnabled enabled: Bool, maxRetryAttempts attempts: Int) {
+        self.isRetryEnabled = enabled
+        self.maxRetryAttempts = attempts
     }
     
     /**
