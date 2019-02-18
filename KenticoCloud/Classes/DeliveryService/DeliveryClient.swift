@@ -40,11 +40,17 @@ public class DeliveryClient {
         self.isRetryEnabled = isRetryEnabled
         self.maxRetryAttempts = maxRetryAttempts
         self.headers = getHeaders()
+        if (maxRetryAttempts < 0) {
+            self.maxRetryAttempts = 0
+        }
     }
 
     public func setRetryAttribute(isRetryEnabled enabled: Bool, maxRetryAttempts attempts: Int) {
         self.isRetryEnabled = enabled
         self.maxRetryAttempts = attempts
+        if (attempts < 0) {
+            self.maxRetryAttempts = 0
+        }
     }
     
     /**
