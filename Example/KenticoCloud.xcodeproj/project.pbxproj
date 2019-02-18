@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		107E45C0EA99AB5B0FA46E05 /* Pods_KenticoCloud_Example_KenticoCloud_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E61A8A4314F17E2FFDF5ED /* Pods_KenticoCloud_Example_KenticoCloud_Tests.framework */; };
+		323D9820221B2CEB0056C601 /* RetryPolicyOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323D981E221B2CA40056C601 /* RetryPolicyOption.swift */; };
 		439AC8E3753538286F52EFE9 /* Pods_KenticoCloud_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B647A262AADF6D1F42CC1451 /* Pods_KenticoCloud_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		0C08F38272A5593AC633791E /* Pods-KenticoCloud_Example-KenticoCloud_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenticoCloud_Example-KenticoCloud_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KenticoCloud_Example-KenticoCloud_Tests/Pods-KenticoCloud_Example-KenticoCloud_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		323D981E221B2CA40056C601 /* RetryPolicyOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryPolicyOption.swift; sourceTree = "<group>"; };
 		334C30581096D57AF6202B29 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3C016A1E98DC005C740F6B31 /* Pods-KenticoCloud_Example-KenticoCloud_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenticoCloud_Example-KenticoCloud_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KenticoCloud_Example-KenticoCloud_Tests/Pods-KenticoCloud_Example-KenticoCloud_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		43E7CC258AA24C55207C538F /* KenticoCloud.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KenticoCloud.podspec; path = ../KenticoCloud.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -278,6 +280,7 @@
 				8F1C853E1F8E48090043807B /* GetTaxonomyGroup.swift */,
 				8F2421041F90E17200C3C2E9 /* GetContentTypes.swift */,
 				8F2421081F90F09F00C3C2E9 /* GetContentType.swift */,
+				323D981E221B2CA40056C601 /* RetryPolicyOption.swift */,
 			);
 			path = DeliveryClient;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				8F1C85521F8E48090043807B /* HtmlContentBlock.swift in Sources */,
 				8F1C85541F8E48090043807B /* LinkedItemsBlock.swift in Sources */,
 				8F1C855C1F8E4BF90043807B /* DateTimeElement.swift in Sources */,
+				323D9820221B2CEB0056C601 /* RetryPolicyOption.swift in Sources */,
 				8F1C85511F8E48090043807B /* GetTaxonomyGroup.swift in Sources */,
 				8FA7D8AB1F8E6C500057C590 /* TaxonomyElement.swift in Sources */,
 				8FF0AC4421AED2EE00783FF9 /* CoffeeTestModel.swift in Sources */,

@@ -60,6 +60,24 @@ public class DeliveryClient {
             self.maxRetryAttempts = 0
         }
     }
+
+    /**
+     Gets the maximum number of retry attempts.
+
+     - Returns: maximum number of retry attempts.
+    */
+    public func getMaximumRetryAttempts() -> Int {
+        return self.maxRetryAttempts
+    }
+
+    /**
+     Gets whether the retry policy is enabled
+
+     - Returns: the flag for enabling retry policy.
+     */
+    public func getIsRetryEnabled() -> Bool {
+        return self.isRetryEnabled
+    }
     
     /**
      Gets multiple items from Delivery service.
