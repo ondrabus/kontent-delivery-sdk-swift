@@ -137,6 +137,25 @@ let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", secureApiKey:"SEC
 ```
 
 For more details, see [Securing the Delivery API](https://developer.kenticocloud.com/reference#secure-access).
+
+### Configuring retry policy
+
+The client can retry getting items after it encounters errors. By default, the retry policy is enabled, and the maximum retry attempts is 5.
+You can configure the maximum retry attempts when creating a `DeliveryClient`.
+
+```swift
+import KenticoCloud
+
+let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", isRetryEnabled: true, maxRetryAttempts: CUSTOM_MAX_ATTEMPTS_NUMBER)
+```
+
+You can also disable the retry policy.
+
+```swift
+import KenticoCloud
+
+let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", isRetryEnabled: false)
+```
  
 ## Getting items
 
