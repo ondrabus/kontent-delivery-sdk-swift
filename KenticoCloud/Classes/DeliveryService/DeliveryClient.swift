@@ -29,6 +29,8 @@ public class DeliveryClient {
      - Parameter previewApiKey: Preview API key for the project.
      - Parameter secureApiKey: Secure API key for the project.
      - Parameter enableDebugLogging: Flag for logging debug messages.
+     - Parameter isRetryEnabled: Flag for enabling retry policy.
+     - Parameter maxRetryAttempts: Maximum number of retry attempts.
      - Returns: Instance of the DeliveryClient.
      */
     public init(projectId: String, previewApiKey: String? = nil, secureApiKey: String? = nil, enableDebugLogging: Bool = false,
@@ -45,6 +47,12 @@ public class DeliveryClient {
         }
     }
 
+    /**
+     Configures retry policy of the delivery client.
+
+     - Parameter isRetryEnabled: Flag for enabling retry policy.
+     - Parameter maxRetryAttempts: Maximum number of retry attempts.
+    */
     public func setRetryAttribute(isRetryEnabled enabled: Bool, maxRetryAttempts attempts: Int) {
         self.isRetryEnabled = enabled
         self.maxRetryAttempts = attempts
