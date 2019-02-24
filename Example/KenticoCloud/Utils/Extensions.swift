@@ -25,11 +25,11 @@ extension UILabel {
                 documentAttributes: nil)
             
             
-            let fontSizeAttribute = [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 16.0)]
+            let fontSizeAttribute = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16.0)]
             
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = 1.5
-            let lineSpacingAttribute = [NSAttributedStringKey.paragraphStyle : paragraphStyle]
+            let lineSpacingAttribute = [NSAttributedString.Key.paragraphStyle : paragraphStyle]
             
             attributedString.addAttributes(fontSizeAttribute, range: NSMakeRange(0, attributedString.length))
             attributedString.addAttributes(lineSpacingAttribute, range: NSMakeRange(0, attributedString.length))
