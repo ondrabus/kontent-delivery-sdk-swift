@@ -207,7 +207,7 @@ public class DeliveryClient {
         sendGetTaxonomyRequest(url: requestUrl, completionHandler: completionHandler)
     }
     
-    private func sendGetItemsRequest<T>(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ItemsResponse<T>?, Error?) -> ()) where T: Mappable {
+    private func sendGetItemsRequest<T>(url: String, completionHandler: @escaping (Bool, ItemsResponse<T>?, Error?) -> ()) where T: Mappable {
         sessionManager.request(url, headers: self.headers).responseObject { (response: DataResponse<ItemsResponse<T>>) in
             
             switch response.result {
@@ -228,7 +228,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetItemRequest<T>(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ItemResponse<T>?, Error?) -> ()) where T: Mappable {
+    private func sendGetItemRequest<T>(url: String, completionHandler: @escaping (Bool, ItemResponse<T>?, Error?) -> ()) where T: Mappable {
         sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse<ItemResponse<T>>) in
             
             switch response.result {
@@ -248,7 +248,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetContentTypesRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ContentTypesResponse?, Error?) -> ()) {
+    private func sendGetContentTypesRequest(url: String, completionHandler: @escaping (Bool, ContentTypesResponse?, Error?) -> ()) {
         sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentTypesResponse>) in
             
             switch response.result {
@@ -268,7 +268,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetContentTypeRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ContentType?, Error?) -> ()) {
+    private func sendGetContentTypeRequest(url: String, completionHandler: @escaping (Bool, ContentType?, Error?) -> ()) {
         sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentType>) in
             
             switch response.result {
@@ -288,7 +288,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetTaxonomiesRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, [TaxonomyGroup]?, Error?) -> ()) {
+    private func sendGetTaxonomiesRequest(url: String, completionHandler: @escaping (Bool, [TaxonomyGroup]?, Error?) -> ()) {
         sessionManager.request(url, headers: self.headers).responseArray(keyPath: "taxonomies") { (response: DataResponse<[TaxonomyGroup]>) in
             
             switch response.result {
@@ -308,7 +308,7 @@ public class DeliveryClient {
         }
     }
     
-    private func sendGetTaxonomyRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, TaxonomyGroup?, Error?) -> ()) {
+    private func sendGetTaxonomyRequest(url: String, completionHandler: @escaping (Bool, TaxonomyGroup?, Error?) -> ()) {
         sessionManager.request(url, headers: self.headers).responseObject { (response: DataResponse<TaxonomyGroup>) in
             
             switch response.result {
