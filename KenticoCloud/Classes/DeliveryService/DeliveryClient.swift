@@ -18,8 +18,7 @@ public class DeliveryClient {
     private var secureApiKey: String?
     private var headers: HTTPHeaders?
     private var isDebugLoggingEnabled: Bool
-    private var isRetryEnabled: Bool
-    private var maxRetryAttempts: Int
+    private var sessionManager: SessionManager
     
     /**
      Inits delivery client instance.
@@ -39,12 +38,10 @@ public class DeliveryClient {
         self.previewApiKey = previewApiKey
         self.secureApiKey = secureApiKey
         self.isDebugLoggingEnabled = enableDebugLogging
-        self.isRetryEnabled = isRetryEnabled
-        self.maxRetryAttempts = maxRetryAttempts
+        self.sessionManager = SessionManager()
         self.headers = getHeaders()
-        if (maxRetryAttempts < 0) {
-            self.maxRetryAttempts = 0
-        }
+        let retryHandler = RetryHandler(maxRetryAttempts: maxRetryAttempts, isRetryEnabled: isRetryEnabled)
+        sessionManager.retrier = retryHandler
     }
 
     /**
@@ -54,11 +51,8 @@ public class DeliveryClient {
      - Parameter maxRetryAttempts: Maximum number of retry attempts.
     */
     public func setRetryAttribute(isRetryEnabled enabled: Bool, maxRetryAttempts attempts: Int) {
-        self.isRetryEnabled = enabled
-        self.maxRetryAttempts = attempts
-        if (attempts < 0) {
-            self.maxRetryAttempts = 0
-        }
+        let retryHandler = RetryHandler(maxRetryAttempts: attempts, isRetryEnabled: enabled)
+        sessionManager.retrier = retryHandler
     }
 
     /**
@@ -67,7 +61,10 @@ public class DeliveryClient {
      - Returns: maximum number of retry attempts.
     */
     public func getMaximumRetryAttempts() -> Int {
-        return self.maxRetryAttempts
+        guard let retryHandler = self.sessionManager.retrier as? RetryHandler else {
+            fatalError("Session manager retrier must be an instance of RetryHandler")
+        }
+        return retryHandler.getMaximumRetryNumber()
     }
 
     /**
@@ -76,7 +73,10 @@ public class DeliveryClient {
      - Returns: the flag for enabling retry policy.
      */
     public func getIsRetryEnabled() -> Bool {
-        return self.isRetryEnabled
+        guard let retryHandler = self.sessionManager.retrier as? RetryHandler else {
+            fatalError("Session manager retrier must be an instance of RetryHandler")
+        }
+        return retryHandler.getIsRetryEnabled()
     }
     
     /**
@@ -208,7 +208,7 @@ public class DeliveryClient {
     }
     
     private func sendGetItemsRequest<T>(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ItemsResponse<T>?, Error?) -> ()) where T: Mappable {
-        Alamofire.request(url, headers: self.headers).responseObject { (response: DataResponse<ItemsResponse<T>>) in
+        sessionManager.request(url, headers: self.headers).responseObject { (response: DataResponse<ItemsResponse<T>>) in
             
             switch response.result {
             case .success:
@@ -224,18 +224,13 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting items action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
-                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
-                    self.sendGetItemsRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
-                } else {
-                    completionHandler(false, nil, error)
-                }
+                completionHandler(false, nil, error)
             }
         }
     }
     
     private func sendGetItemRequest<T>(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ItemResponse<T>?, Error?) -> ()) where T: Mappable {
-        Alamofire.request(url, headers: self.headers).responseObject() { (response: DataResponse<ItemResponse<T>>) in
+        sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse<ItemResponse<T>>) in
             
             switch response.result {
             case .success:
@@ -250,18 +245,13 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting items action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
-                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
-                    self.sendGetItemRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
-                } else {
-                    completionHandler(false, nil, error)
-                }
+                completionHandler(false, nil, error)
             }
         }
     }
     
     private func sendGetContentTypesRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ContentTypesResponse?, Error?) -> ()) {
-        Alamofire.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentTypesResponse>) in
+        sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentTypesResponse>) in
             
             switch response.result {
             case .success:
@@ -276,18 +266,13 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting content types action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
-                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
-                    self.sendGetContentTypesRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
-                } else {
-                    completionHandler(false, nil, error)
-                }
+                completionHandler(false, nil, error)
             }
         }
     }
     
     private func sendGetContentTypeRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, ContentType?, Error?) -> ()) {
-        Alamofire.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentType>) in
+        sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentType>) in
             
             switch response.result {
             case .success:
@@ -301,18 +286,14 @@ public class DeliveryClient {
                 if self.isDebugLoggingEnabled {
                     print("[Kentico Cloud] Getting content types action has failed. Check requested URL: \(url)")
                 }
-                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
-                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
-                    self.sendGetContentTypeRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
-                } else {
-                    completionHandler(false, nil, error)
-                }
+
+                completionHandler(false, nil, error)
             }
         }
     }
     
     private func sendGetTaxonomiesRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, [TaxonomyGroup]?, Error?) -> ()) {
-        Alamofire.request(url, headers: self.headers).responseArray(keyPath: "taxonomies") { (response: DataResponse<[TaxonomyGroup]>) in
+        sessionManager.request(url, headers: self.headers).responseArray(keyPath: "taxonomies") { (response: DataResponse<[TaxonomyGroup]>) in
             
             switch response.result {
             case .success:
@@ -327,18 +308,13 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting taxonomies action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
-                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
-                    self.sendGetTaxonomiesRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
-                } else {
-                    completionHandler(false, nil, error)
-                }
+                completionHandler(false, nil, error)
             }
         }
     }
     
     private func sendGetTaxonomyRequest(url: String, attemptedNumber: Int = 1, completionHandler: @escaping (Bool, TaxonomyGroup?, Error?) -> ()) {
-        Alamofire.request(url, headers: self.headers).responseObject { (response: DataResponse<TaxonomyGroup>) in
+        sessionManager.request(url, headers: self.headers).responseObject { (response: DataResponse<TaxonomyGroup>) in
             
             switch response.result {
             case .success:
@@ -353,18 +329,9 @@ public class DeliveryClient {
                     print("[Kentico Cloud] Getting taxonomies action has failed. Check requested URL: \(url)")
                 }
 
-                if self.isRetryEnabled && attemptedNumber <= self.maxRetryAttempts {
-                    self.waitForRetry(withAttemptedNumber: attemptedNumber)
-                    self.sendGetTaxonomyRequest(url: url, attemptedNumber: attemptedNumber + 1, completionHandler: completionHandler)
-                } else {
-                    completionHandler(false, nil, error)
-                }
+                completionHandler(false, nil, error)
             }
         }
-    }
-
-    private func waitForRetry(withAttemptedNumber attemptedNumber: Int) {
-        Thread.sleep(forTimeInterval: (pow(2, attemptedNumber + 1) as NSDecimalNumber).doubleValue * 0.1)
     }
     
     private func getItemsRequestUrl(queryParameters: [QueryParameter]) -> String {
@@ -476,5 +443,84 @@ public class DeliveryClient {
         headers["X-KC-SDKID"] = "cocoapods.org;KenticoCloud;1.0.0"
         
         return headers
+    }
+
+    private class RetryHandler: RequestRetrier {
+
+        private var attemptedRetryNumber: Int
+        private var maxRetryAttempts: Int
+        private var isRetryEnabled: Bool
+
+        /**
+         Inits a Retry Handler instance
+
+         - Parameter isRetryEnabled: Flag for enabling retry policy.
+         - Parameter maxRetryAttempts: Maximum number of retry attempts.
+         - Returns: A Retry Handler instance
+        */
+        public init(maxRetryAttempts: Int, isRetryEnabled: Bool) {
+            self.attemptedRetryNumber = 1
+            self.maxRetryAttempts = maxRetryAttempts
+            self.isRetryEnabled = isRetryEnabled
+            if (maxRetryAttempts < 0) {
+                self.maxRetryAttempts = 0
+            }
+        }
+
+        // Protocol requirement
+        public func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
+            if shouldRetry() {
+                let waitTime = (pow(2, attemptedRetryNumber + 1) as NSDecimalNumber).doubleValue * 0.1
+                incrementRetryTimes()
+                completion(true, waitTime)
+            } else {
+                resetRetryTimes()
+                completion(false, 0)
+            }
+        }
+
+        /**
+         Configures retry policy of the delivery client.
+
+         - Parameter isRetryEnabled: Flag for enabling retry policy.
+         - Parameter maxRetryAttempts: Maximum number of retry attempts.
+         */
+        public func setRetryAttribute(isRetryEnabled enabled: Bool, maxRetryAttempts attempts: Int) {
+            self.isRetryEnabled = enabled
+            self.maxRetryAttempts = attempts
+            if (attempts < 0) {
+                self.maxRetryAttempts = 0
+            }
+        }
+
+        /**
+         Gets the maximum number of retry attempts.
+
+         - Returns: maximum number of retry attempts.
+         */
+        public func getMaximumRetryNumber() -> Int {
+            return self.maxRetryAttempts
+        }
+
+        /**
+         Gets whether the retry policy is enabled
+
+         - Returns: the flag for enabling retry policy.
+         */
+        public func getIsRetryEnabled() -> Bool {
+            return self.isRetryEnabled
+        }
+
+        private func resetRetryTimes() {
+            attemptedRetryNumber = 0
+        }
+
+        private func incrementRetryTimes() {
+            attemptedRetryNumber += 1
+        }
+
+        private func shouldRetry() -> Bool {
+            return isRetryEnabled && attemptedRetryNumber <= maxRetryAttempts
+        }
     }
 }
