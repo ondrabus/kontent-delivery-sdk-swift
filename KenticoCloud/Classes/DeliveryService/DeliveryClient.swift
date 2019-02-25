@@ -223,7 +223,6 @@ public class DeliveryClient {
                 if self.isDebugLoggingEnabled {
                     print("[Kentico Cloud] Getting items action has failed. Check requested URL: \(url)")
                 }
-
                 completionHandler(false, nil, error)
             }
         }
@@ -244,7 +243,6 @@ public class DeliveryClient {
                 if self.isDebugLoggingEnabled {
                     print("[Kentico Cloud] Getting items action has failed. Check requested URL: \(url)")
                 }
-
                 completionHandler(false, nil, error)
             }
         }
@@ -265,7 +263,6 @@ public class DeliveryClient {
                 if self.isDebugLoggingEnabled {
                     print("[Kentico Cloud] Getting content types action has failed. Check requested URL: \(url)")
                 }
-
                 completionHandler(false, nil, error)
             }
         }
@@ -286,7 +283,6 @@ public class DeliveryClient {
                 if self.isDebugLoggingEnabled {
                     print("[Kentico Cloud] Getting content types action has failed. Check requested URL: \(url)")
                 }
-
                 completionHandler(false, nil, error)
             }
         }
@@ -307,8 +303,7 @@ public class DeliveryClient {
                 if self.isDebugLoggingEnabled {
                     print("[Kentico Cloud] Getting taxonomies action has failed. Check requested URL: \(url)")
                 }
-
-                completionHandler(false, nil, error)
+                completionHandler(false, [], error)
             }
         }
     }
@@ -328,7 +323,6 @@ public class DeliveryClient {
                 if self.isDebugLoggingEnabled {
                     print("[Kentico Cloud] Getting taxonomies action has failed. Check requested URL: \(url)")
                 }
-
                 completionHandler(false, nil, error)
             }
         }
