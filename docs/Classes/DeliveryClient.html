@@ -145,8 +145,8 @@
                   <div>
                     <code>
                     <a name="/s:12KenticoCloud14DeliveryClientC9projectId13previewApiKey06securehI018enableDebugLoggingACSS_SSSgAHSbtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(projectId:previewApiKey:secureApiKey:enableDebugLogging:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12KenticoCloud14DeliveryClientC9projectId13previewApiKey06securehI018enableDebugLoggingACSS_SSSgAHSbtcfc">init(projectId:previewApiKey:secureApiKey:enableDebugLogging:)</a>
+                    <a name="//apple_ref/swift/Method/init(projectId:previewApiKey:secureApiKey:enableDebugLogging:isRetryEnabled:maxRetryAttempts:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud14DeliveryClientC9projectId13previewApiKey06securehI018enableDebugLoggingACSS_SSSgAHSbtcfc">init(projectId:previewApiKey:secureApiKey:enableDebugLogging:isRetryEnabled:maxRetryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -162,7 +162,7 @@ Requests Preview API if previewApiKey is specified, otherwise requests Live API.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">previewApiKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">secureApiKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">enableDebugLogging</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">previewApiKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">secureApiKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">enableDebugLogging</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">isRetryEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">maxRetryAttempts</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kc">5</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -215,6 +215,30 @@ Requests Preview API if previewApiKey is specified, otherwise requests Live API.
                               <td>
                                 <div>
                                   <p>Flag for logging debug messages.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isRetryEnabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Flag for enabling retry policy.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maxRetryAttempts</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Maximum number of retry attempts.</p>
                                 </div>
                               </td>
                             </tr>
