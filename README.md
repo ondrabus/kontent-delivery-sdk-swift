@@ -339,7 +339,7 @@ let deliveryClient = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", enableDeb
 ```
 
 ## Releasing a new version of the Cocoapod package
-Follow [official instructions](https://guides.cocoapods.org/making/making-a-cocoapod.html).
+Travis CI automatically builds and releases a new version of the pod when added new tag.
 
 ## Documentation
 You can find full API reference documentation [here](https://kentico.github.io/cloud-sdk-swift/index.html).
