@@ -10,3 +10,8 @@ script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/KenticoCloud.xcworkspace -scheme KenticoCloud_Example -sdk iphonesimulator -destination 'name=iPhone SE' ONLY_ACTIVE_ARCH=NO | xcpretty
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: script
+  script: ./scripts/push.sh
+  on:
+    tags: true
