@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ImageUrlBuilder Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ImageUrlBuilder" class="dashAnchor"></a>
+    <a title="ImageUrlBuilder Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">KenticoCloud Docs</a> (89% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">KenticoCloud Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ImageUrlBuilder Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Asset.html">Asset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AssetElement.html">AssetElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ContentType.html">ContentType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ContentTypesResponse.html">ContentTypesResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DateTimeElement.html">DateTimeElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DeliveryClient.html">DeliveryClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Element.html">Element</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HtmlContentBlock.html">HtmlContentBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ImageUrlBuilder.html">ImageUrlBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ImageUrlBuilder/ImageCompression.html">– ImageCompression</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ImageUrlBuilder/ImageFormat.html">– ImageFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ImageUrlBuilder/ImageFitMode.html">– ImageFitMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InlineImageBlock.html">InlineImageBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ItemResponse.html">ItemResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ItemsResponse.html">ItemsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LinkedItemsBlock.html">LinkedItemsBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LinkedItemsElement.html">LinkedItemsElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MapElement.html">MapElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipleChoice.html">MultipleChoice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultipleChoiceElement.html">MultipleChoiceElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NumberElement.html">NumberElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/QueryParameter.html">QueryParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RichTextElement.html">RichTextElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Taxonomy.html">Taxonomy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TaxonomyElement.html">TaxonomyElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TaxonomyGroup.html">TaxonomyGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TaxonomyTerm.html">TaxonomyTerm</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextElement.html">TextElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UrlSlugElement.html">UrlSlugElement</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/QueryParameterKey.html">QueryParameterKey</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:12KenticoCloud5BlockP">Block</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ImageUrlBuilder</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                </div>
+              </div>
+            <p>A helper class to build image transformation URL.
+Read <a href="https://developer.kenticocloud.com/v1/reference#image-transformation">https://developer.kenticocloud.com/v1/reference#image-transformation</a> before using this URL builder,
+because the builder will not validate the parameter.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC04baseD0ACSS_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(baseUrl:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC04baseD0ACSS_tcfc">init(baseUrl:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inits Image url builder instance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">baseUrl</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>baseUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The url of the source image, which should be either jpeg, png, gif, or webp in order to apply the transformation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with base url updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC3urlSSvp"></a>
+                    <a name="//apple_ref/swift/Property/url" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC3urlSSvp">url</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The URL of the image with transformation options.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The URL of the image with transformation options.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC11withFitModeyA2C0cgH0OF"></a>
+                    <a name="//apple_ref/swift/Method/withFitMode(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC11withFitModeyA2C0cgH0OF">withFitMode(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image url builder with fit mode parameter.
+Supported fit modes are: crop, clip, and scale.
+Fit mode works only if width, height, or both parameters are set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withFitMode</span><span class="p">(</span><span class="n">_</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImageUrlBuilder/ImageFitMode.html">ImageFitMode</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>variable that indicates the image fit mode.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with fit mode option updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC9withWidthyACSiF"></a>
+                    <a name="//apple_ref/swift/Method/withWidth(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC9withWidthyACSiF">withWidth(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with absolute pixel width parameter.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withWidth</span><span class="p">(</span><span class="n">_</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The absolute pixel width of the output image. Restricted range: 1 to 8192.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with width updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC14withWidthRatioyACSdF"></a>
+                    <a name="//apple_ref/swift/Method/withWidthRatio(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC14withWidthRatioyACSdF">withWidthRatio(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with percentage width parameter.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withWidthRatio</span><span class="p">(</span><span class="n">_</span> <span class="nv">ratio</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The percentage width of output image to input image. Restricted range: 0 to 1.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with width updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC10withHeightyACSiF"></a>
+                    <a name="//apple_ref/swift/Method/withHeight(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC10withHeightyACSiF">withHeight(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with absolute pixel height parameter.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withHeight</span><span class="p">(</span><span class="n">_</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The absolute pixel height of the output image. Restricted range: 1 to 8192.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with height updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC15withHeightRatioyACSdF"></a>
+                    <a name="//apple_ref/swift/Method/withHeightRatio(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC15withHeightRatioyACSdF">withHeightRatio(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with percentage height parameter.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withHeightRatio</span><span class="p">(</span><span class="n">_</span> <span class="nv">ratio</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The percentage height of output image to input image. Restricted range: 0 to 1.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with height updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC7withDpryACSdF"></a>
+                    <a name="//apple_ref/swift/Method/withDpr(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC7withDpryACSdF">withDpr(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with DPR.
+DPR parameter works only if width, height, or both parameters are set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withDpr</span><span class="p">(</span><span class="n">_</span> <span class="nv">dpr</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dpr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The DPR value of the image. Restricted range: 0 to 5.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with DPR updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC17withRectangleCrop1x1y5width6heightACSi_S3itF"></a>
+                    <a name="//apple_ref/swift/Method/withRectangleCrop(x:y:width:height:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC17withRectangleCrop1x1y5width6heightACSi_S3itF">withRectangleCrop(x:y:width:height:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with rectangle crop.
+Incompatible with focal point.
+If both focal point crop and rectangle crop exist, only rectangle crop will appear in URL.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withRectangleCrop</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>x</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Rectangle offset on the x-axis in pixels. Restricted range: 1 to 8192.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>y</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Rectangle offset on the y-axis in pixels. Restricted range: 1 to 8192.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The absolute pixel width of rectangle. Restricted range: 1 to 8192.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The absolute pixel height of rectangle. Restricted range: 1 to 8192.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with rectangle crop option updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC17withRectangleCrop1x1y10widthRatio06heightJ0ACSd_S3dtF"></a>
+                    <a name="//apple_ref/swift/Method/withRectangleCrop(x:y:widthRatio:heightRatio:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC17withRectangleCrop1x1y10widthRatio06heightJ0ACSd_S3dtF">withRectangleCrop(x:y:widthRatio:heightRatio:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with rectangle crop.
+Incompatible with focal point.
+If both focal point crop and rectangle crop exist, only rectangle crop will appear in URL.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withRectangleCrop</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="n">widthRatio</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="n">heightRatio</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>x</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Rectangle offset on the x-axis in percentage. Restricted range: 0 to 1.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>y</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Rectangle offset on the y-axis in percentage. Restricted range: 0 to 1.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>widthRatio</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The width ratio of rectangle to the input image width. Restricted range: 0 to 1.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>heightRatio</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height ratio of rectangle to the input image height. Restricted range: 0 to 1.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with rectangle crop option updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC18withFocalPointCrop1x1y1zACSd_S2dtF"></a>
+                    <a name="//apple_ref/swift/Method/withFocalPointCrop(x:y:z:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC18withFocalPointCrop1x1y1zACSd_S2dtF">withFocalPointCrop(x:y:z:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with focal point crop.
+Fit mode will be set to <q>crop</q>.
+Incompatible with rect. If both focal point crop and rectangle crop exist, only rectangle crop will appear in URL.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withFocalPointCrop</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">z</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>x</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The horizontal value of the focal point of an image. Restricted range: 0 to 1.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>y</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The vertical value of the focal point of an image. Restricted range: 0 to 1.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>z</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The zoom value of a focal point of an image. Recommended range: 1 to 100</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with focal point crop option updated, if rectangle parameter is not set.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC19withBackgroundColor03rgbH05alphaACSi_SiSgtF"></a>
+                    <a name="//apple_ref/swift/Method/withBackgroundColor(rgbColor:alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC19withBackgroundColor03rgbH05alphaACSi_SiSgtF">withBackgroundColor(rgbColor:alpha:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with background color option.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withBackgroundColor</span><span class="p">(</span><span class="n">rgbColor</span> <span class="nv">rgb</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">alpha</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rgbColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an integer represents the color in RGB format. Restricted range: 0x000000 to 0xFFFFFF.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>(Optional) an integer represents the color&rsquo;s alpha transparency. Restricted range: 0x00 to 0xFF.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with background color option updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC19withBackgroundColor3red5green4blue5alphaACSi_S3iSgtF"></a>
+                    <a name="//apple_ref/swift/Method/withBackgroundColor(red:green:blue:alpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC19withBackgroundColor3red5green4blue5alphaACSi_S3iSgtF">withBackgroundColor(red:green:blue:alpha:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image builder with background color option.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withBackgroundColor</span><span class="p">(</span><span class="n">red</span> <span class="nv">r</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">green</span> <span class="nv">g</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">blue</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">alpha</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>red</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an integer represents the red value of color. Restricted range: 0x00 to 0xFF.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>green</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an integer represents the green value of color. Restricted range: 0x00 to 0xFF.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>blue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an integer represents the blue value of color. Restricted range: 0x00 to 0xFF.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>(Optional) an integer represents the color&rsquo;s alpha transparency. Restricted range: 0x00 to 0xFF.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with background color option updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC04withC6FormatyA2C0cG0OF"></a>
+                    <a name="//apple_ref/swift/Method/withImageFormat(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC04withC6FormatyA2C0cG0OF">withImageFormat(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image url builder with image format parameter.
+Supported formats are: gif, png, png8, jpg, pjpg, and webp.
+If no format parameter present, the output image format will be same as input one.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withImageFormat</span><span class="p">(</span><span class="n">_</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImageUrlBuilder/ImageFormat.html">ImageFormat</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>format</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>variable that indicates the output image format.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with format option updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC04withC11CompressionyA2C0cG0OF"></a>
+                    <a name="//apple_ref/swift/Method/withImageCompression(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC04withC11CompressionyA2C0cG0OF">withImageCompression(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image url builder with the compression parameter.
+The compression works only if the output image format has been set to WebP.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withImageCompression</span><span class="p">(</span><span class="n">_</span> <span class="nv">compression</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImageUrlBuilder/ImageCompression.html">ImageCompression</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>compression</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>variable that indicates whether the compression is lossy or lossless.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with compression option updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC11withQualityyACSiF"></a>
+                    <a name="//apple_ref/swift/Method/withQuality(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC11withQualityyACSiF">withQuality(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image url builder with the quality parameter.
+Quality parameter works only if the output image format is either jpg, pjpg, or WebP.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withQuality</span><span class="p">(</span><span class="n">_</span> <span class="nv">quality</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>quality</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the compression level for lossy file-formatted images. Restricted range: 0 to 100.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with quality option updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC19withAutomaticFormatACyF"></a>
+                    <a name="//apple_ref/swift/Method/withAutomaticFormat()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC19withAutomaticFormatACyF">withAutomaticFormat()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the image url builder by enabling automatic delivery of WebP format images.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">withAutomaticFormat</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">ImageUrlBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Instance of the ImageUrlBuilder with automatic format option updated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC0C11CompressionO"></a>
+                    <a name="//apple_ref/swift/Enum/ImageCompression" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC0C11CompressionO">ImageCompression</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The image compression option.</p>
+
+                        <a href="../Classes/ImageUrlBuilder/ImageCompression.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ImageCompression</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC0C6FormatO"></a>
+                    <a name="//apple_ref/swift/Enum/ImageFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC0C6FormatO">ImageFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The image format option.</p>
+
+                        <a href="../Classes/ImageUrlBuilder/ImageFormat.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ImageFormat</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12KenticoCloud15ImageUrlBuilderC0C7FitModeO"></a>
+                    <a name="//apple_ref/swift/Enum/ImageFitMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12KenticoCloud15ImageUrlBuilderC0C7FitModeO">ImageFitMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The image fit mode option.</p>
+
+                        <a href="../Classes/ImageUrlBuilder/ImageFitMode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ImageFitMode</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://github.com/kentico/cloud-sdk-swift" target="_blank" rel="external">Martin Makarsky</a>. All rights reserved. (Last updated: 2019-04-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

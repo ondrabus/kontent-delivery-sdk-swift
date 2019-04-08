@@ -13,7 +13,7 @@
     <a title="KenticoCloud  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">KenticoCloud Docs</a> (87% documented)</p>
+        <p><a href="index.html">KenticoCloud Docs</a> (89% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -52,6 +52,18 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/HtmlContentBlock.html">HtmlContentBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ImageUrlBuilder.html">ImageUrlBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ImageUrlBuilder/ImageCompression.html">– ImageCompression</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ImageUrlBuilder/ImageFormat.html">– ImageFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ImageUrlBuilder/ImageFitMode.html">– ImageFitMode</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/InlineImageBlock.html">InlineImageBlock</a>
@@ -130,6 +142,8 @@
             
             <h1 id='kentico-cloud-swift-sdk' class='heading'>Kentico Cloud Swift SDK</h1>
 
+<p><a href="https://stackoverflow.com/tags/kentico-cloud"><img src="https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white" alt="Stack Overflow"></a></p>
+
 <p><a href="https://travis-ci.org/Kentico/cloud-sdk-swift"><img src="https://travis-ci.org/Kentico/cloud-sdk-swift.svg?branch=master" alt="Travis"></a>
 <a href="https://cocoapods.org/pods/KenticoCloud"><img src="https://img.shields.io/cocoapods/v/KenticoCloud.svg" alt="CocoaPods"></a>
 <a href="https://cocoapods.org/pods/KenticoCloud"><img src="https://img.shields.io/cocoapods/p/KenticoCloud.svg" alt="CocoaPods"></a></p>
@@ -138,14 +152,14 @@
 <p>The KenticoCloud iOS SDK is a library used for retrieving content. You can use the SDK as a CocoaPod package or add it manually.</p>
 <h3 id='sample-app' class='heading'>Sample app</h3>
 
-<p>The repository contains sample app which demonstrates basic usage of the SDK.</p>
+<p>The repository contains sample app which demonstrates basic usage of the SDK. It displays content from a Sample Project that demonstrates Kentico Cloud features and best practices. This fully featured project contains marketing content for Dancing Goat – an imaginary chain of coffee shops. If you don&rsquo;t have your own Sample Project, any admin of a Kentico Cloud subscription <a href="https://app.kenticocloud.com/sample-project-generator">can generate one</a>. </p>
 
 <p><img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/splashScreens.png?raw=true" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/locations.png?raw=true" width="212"></p>
 <h2 id='quick-start' class='heading'>Quick start</h2>
 
 <p><strong>1. Add a pod</strong>  </p>
 <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
-<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'10.0'</span>
+<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'12.0'</span>
 <span class="n">use_frameworks!</span>
 
 <span class="n">target</span> <span class="s1">'&lt;Your Target Name&gt;'</span> <span class="k">do</span>
@@ -247,6 +261,20 @@
 </code></pre>
 
 <p>For more details, see <a href="https://developer.kenticocloud.com/reference#secure-access">Securing the Delivery API</a>.</p>
+<h3 id='configuring-retry-policy' class='heading'>Configuring retry policy</h3>
+
+<p>The client can retry getting items after it encounters errors. By default, the retry policy is enabled, and the maximum retry attempts is 5.
+You can configure the maximum retry attempts when creating a <code><a href="Classes/DeliveryClient.html">DeliveryClient</a></code>.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">KenticoCloud</span>
+
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">,</span> <span class="nv">isRetryEnabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">maxRetryAttempts</span><span class="p">:</span> <span class="kt">CUSTOM_MAX_ATTEMPTS_NUMBER</span><span class="p">)</span>
+</code></pre>
+
+<p>You can also disable the retry policy.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">KenticoCloud</span>
+
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">,</span> <span class="nv">isRetryEnabled</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+</code></pre>
 <h2 id='getting-items' class='heading'>Getting items</h2>
 <h3 id='using-strongly-typed-models' class='heading'>Using strongly typed models</h3>
 
@@ -409,6 +437,24 @@ client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters)
     <span class="p">}</span>
 <span class="p">})</span>
 </code></pre>
+<h2 id='use-image-transformation' class='heading'>Use image transformation</h2>
+
+<p>Kentico Cloud supports image transformation by using URL parameters. 
+A helper class is provided to create the URL conveniently.
+However, read <a href="https://developer.kenticocloud.com/v1/reference#image-transformation">this documentation</a> to understand the restriction of parameters before using the helper class, as the helper class does not validate the input parameter.</p>
+
+<p>Here is a sample usage:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">originalUrl</span> <span class="o">=</span> <span class="s">"https://example.com/sample-image.jpg"</span>
+<span class="k">let</span> <span class="nv">transformedUrl</span> <span class="o">=</span> <span class="kt">ImageUrlBuilder</span><span class="p">(</span><span class="nv">baseUrl</span><span class="p">:</span> <span class="n">originalUrl</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withWidth</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withHeight</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withFitMode</span><span class="p">(</span><span class="o">.</span><span class="kt">Clip</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withDpr</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withBackGroundColor</span><span class="p">(</span><span class="nv">rgbColor</span><span class="p">:</span> <span class="mh">0x330FAA</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withFormat</span><span class="p">(</span><span class="o">.</span><span class="n">png</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">url</span>
+<span class="c1">// transformedUrl = https://example.com/sample-image.jpg?w=300&amp;h=500&amp;fit=clip&amp;dpr=3.0&amp;bg=330FAA&amp;fm=png</span>
+</code></pre>
 <h2 id='local-development' class='heading'>Local Development</h2>
 
 <p>For running SDK with sample app locally follow the next steps.</p>
@@ -427,7 +473,7 @@ client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters)
 </code></pre>
 <h2 id='releasing-a-new-version-of-the-cocoapod-package' class='heading'>Releasing a new version of the Cocoapod package</h2>
 
-<p>Follow <a href="https://guides.cocoapods.org/making/making-a-cocoapod.html">official instructions</a>.</p>
+<p>Travis CI automatically builds and releases a new version of the pod when added new tag.</p>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
 <p>You can find full API reference documentation <a href="https://kentico.github.io/cloud-sdk-swift/index.html">here</a>.</p>
@@ -455,8 +501,8 @@ client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters)
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://github.com/kentico/cloud-sdk-swift" target="_blank" rel="external">Martin Makarsky</a>. All rights reserved. (Last updated: 2019-01-08)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/kentico/cloud-sdk-swift" target="_blank" rel="external">Martin Makarsky</a>. All rights reserved. (Last updated: 2019-04-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
