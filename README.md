@@ -326,6 +326,26 @@ client.getTaxonomies(completionHandler: { (isSuccess, deliveryItems, error) in
 })
 ```
 
+## Use image transformation
+Kentico Cloud supports image transformation by using URL parameters. 
+A helper class is provided to create the URL conveniently.
+However, read [this documentation](https://developer.kenticocloud.com/v1/reference#image-transformation) to understand the restriction of parameters before using the helper class, as the helper class does not validate the input parameter.
+
+
+Here is a sample usage:
+```swift
+let originalUrl = "https://example.com/sample-image.jpg"
+let transformedUrl = ImageUrlBuilder(baseUrl: originalUrl)
+                        .withWidth(300)
+                        .withHeight(500)
+                        .withFitMode(.Clip)
+                        .withDpr(3)
+                        .withBackGroundColor(rgbColor: 0x330FAA)
+                        .withFormat(.png)
+                        .url
+// transformedUrl = https://example.com/sample-image.jpg?w=300&h=500&fit=clip&dpr=3.0&bg=330FAA&fm=png
+```
+
 ## Local Development
 For running SDK with sample app locally follow the next steps.
 1. Download the repository.
