@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'KenticoCloud'
-    s.version          = '1.1.0'
+    s.version          = '1.2.0'
     s.summary          = 'Swift SDK for Kentico Cloud'
     s.swift_version    = '4.0'
     
