@@ -34,6 +34,11 @@ public class DeliveryClient {
      */
     public init(projectId: String, previewApiKey: String? = nil, secureApiKey: String? = nil, enableDebugLogging: Bool = false,
                 isRetryEnabled: Bool = true, maxRetryAttempts: Int = 5) {
+        
+        // checks if both secure and Preview API keys are present
+        if secureApiKey != nil && previewApiKey != nil {
+            fatalError("Preview API and Secured Production API can't be used at the same time.")
+        }
         self.projectId = projectId
         self.previewApiKey = previewApiKey
         self.secureApiKey = secureApiKey
