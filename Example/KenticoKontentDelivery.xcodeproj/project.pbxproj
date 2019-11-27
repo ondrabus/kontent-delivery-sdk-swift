@@ -299,14 +299,14 @@
 			path = Article;
 			sourceTree = "<group>";
 		};
-		585700F7238E96E900E9EBDB /* CloudModels */ = {
+		585700F7238E96E900E9EBDB /* KontentModels */ = {
 			isa = PBXGroup;
 			children = (
 				585700F8238E96E900E9EBDB /* Cafe.swift */,
 				585700F9238E96E900E9EBDB /* Article.swift */,
 				585700FA238E96E900E9EBDB /* Coffee.swift */,
 			);
-			path = CloudModels;
+			path = KontentModels;
 			sourceTree = "<group>";
 		};
 		585700FB238E96E900E9EBDB /* Views */ = {
@@ -344,7 +344,7 @@
 		607FACD21AFB9204008FA782 /* Example for KenticoKontentDelivery */ = {
 			isa = PBXGroup;
 			children = (
-				585700F7238E96E900E9EBDB /* CloudModels */,
+				585700F7238E96E900E9EBDB /* KontentModels */,
 				585700EA238E96E900E9EBDB /* Utils */,
 				585700EC238E96E900E9EBDB /* ViewControllers */,
 				585700FB238E96E900E9EBDB /* Views */,
