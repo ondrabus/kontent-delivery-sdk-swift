@@ -4,7 +4,6 @@ platform :ios, '12.0'
 target 'KenticoKontentDelivery_Example' do
   pod 'KenticoKontentDelivery', :path => '../'
   pod 'AlamofireImage', '~> 3.4.1'
-  pod 'ObjectMapper', '~> 3.4.1'
 
   target 'KenticoKontentDelivery_Tests' do
     inherit! :search_paths

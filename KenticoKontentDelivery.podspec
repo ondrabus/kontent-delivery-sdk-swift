@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
   s.source_files = 'KenticoKontentDelivery/Classes/**/*'
   
   s.dependency 'AlamofireObjectMapper', '~> 5.2.0'
+  s.dependency 'ObjectMapper', '~> 3.4.1'
   s.dependency 'Kanna', '~> 4.0.2'
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
   

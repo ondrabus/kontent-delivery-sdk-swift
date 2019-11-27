@@ -6,7 +6,6 @@
 //  Copyright © 2017 Kentico Software. All rights reserved
 //
 
-import AlamofireImage
 import ObjectMapper
 
 public class Cafe: Mappable {
