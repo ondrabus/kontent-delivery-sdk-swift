@@ -1,4 +1,4 @@
-osx_image: xcode10.2
+osx_image: xcode11.2
 language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
@@ -7,7 +7,7 @@ before_install:
 - pod repo update
 - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/KenticoCloud.xcworkspace -scheme KenticoCloud_Example -sdk iphonesimulator -destination 'name=iPhone SE' ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/KenticoKontentDelivery.xcworkspace -scheme KenticoKontentDelivery_Example -sdk iphonesimulator -destination 'name=iPhone SE' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
 after_success:
 - bash <(curl -s https://codecov.io/bash)
