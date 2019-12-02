@@ -15,5 +15,6 @@ target 'KenticoKontentDelivery_Example' do
     pod 'Nimble', '~> 7.0'
     pod 'ObjectMapper', '~> 3.5.1'
     pod 'AlamofireObjectMapper', '~> 5.2.0'
+    pod 'AlamofireImage', '~> 3.6.0'
   end
 end
