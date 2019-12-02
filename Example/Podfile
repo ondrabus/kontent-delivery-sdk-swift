@@ -1,5 +1,5 @@
 use_frameworks!
-platform :ios, '12.0'
+platform :ios, '11.0'
 
 target 'KenticoKontentDelivery_Example' do
   pod 'KenticoKontentDelivery', :path => '../'

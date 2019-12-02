@@ -41,11 +41,11 @@ SPEC CHECKSUMS:
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
-  KenticoKontentDelivery: 81161fc6182d84ca3f83ec1650f59472edd5d71f
+  KenticoKontentDelivery: b52896b5a9450a7a06bfe9086c4487ea9cd0fe2e
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
 
-PODFILE CHECKSUM: e4a73a341f2b5e884fe6c66b10f2e0c70aba5de2
+PODFILE CHECKSUM: 77c8eebc14bb874686cbf4b9e8cc5fa0f5ead2c5
 
 COCOAPODS: 1.8.4
