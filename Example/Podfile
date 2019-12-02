@@ -4,8 +4,6 @@ platform :ios, '11.0'
 target 'KenticoKontentDelivery_Example' do
   pod 'KenticoKontentDelivery', :path => '../'
   pod 'AlamofireImage', '~> 3.6.0'
-  pod 'ObjectMapper', '~> 3.5.1'
-  pod 'AlamofireObjectMapper', '~> 5.2.0'
 
 
   target 'KenticoKontentDelivery_Tests' do
@@ -13,8 +11,5 @@ target 'KenticoKontentDelivery_Example' do
 
     pod 'Quick', '~> 2.2.0'
     pod 'Nimble', '~> 7.0'
-    pod 'ObjectMapper', '~> 3.5.1'
-    pod 'AlamofireObjectMapper', '~> 5.2.0'
-    pod 'AlamofireImage', '~> 3.6.0'
   end
 end
