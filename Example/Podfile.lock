@@ -1,0 +1,51 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
+  - AlamofireObjectMapper (5.2.1):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - Kanna (4.0.3)
+  - KenticoKontentDelivery (2.0.0):
+    - AlamofireObjectMapper (~> 5.2.0)
+    - Kanna (~> 4.0.2)
+    - ObjectMapper (~> 3.5.1)
+  - Nimble (7.3.4)
+  - ObjectMapper (3.5.1)
+  - Quick (2.2.0)
+
+DEPENDENCIES:
+  - AlamofireImage (~> 3.6.0)
+  - AlamofireObjectMapper (~> 5.2.0)
+  - KenticoKontentDelivery (from `../`)
+  - Nimble (~> 7.0)
+  - ObjectMapper (~> 3.5.1)
+  - Quick (~> 2.2.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - AlamofireObjectMapper
+    - Kanna
+    - Nimble
+    - ObjectMapper
+    - Quick
+
+EXTERNAL SOURCES:
+  KenticoKontentDelivery:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  KenticoKontentDelivery: b52896b5a9450a7a06bfe9086c4487ea9cd0fe2e
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+
+PODFILE CHECKSUM: 77c8eebc14bb874686cbf4b9e8cc5fa0f5ead2c5
+
+COCOAPODS: 1.8.4

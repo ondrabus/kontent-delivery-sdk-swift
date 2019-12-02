@@ -23,4 +23,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Adding contacts.
 - Debug messages for all requests.
 
-[Unreleased]: https://github.com/Kentico/cloud-sdk-swift/compare/0.2.0...HEAD
+[Unreleased]: https://github.com/Kentico/kontent-delivery-sdk-swift/compare/0.2.0...HEAD
