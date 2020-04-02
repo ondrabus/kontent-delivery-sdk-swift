@@ -113,6 +113,14 @@ class CoffeesViewController: ListingBaseViewController, UITableViewDelegate, UIT
     // MARK: Getting items
     
     private func getCoffees() {
+        let client = DeliveryClient.init(projectId: "34aaa010-a788-0004-ce89-a1c49a062a65")
+        // let query = QueryParameter.init(parameterKey: QueryParameterKey.codename, parameterValue: "test_tables")
+        let item = client.getItem(modelType: TableTesting.self, itemName: "test_tables", completionHandler: {(isSuccess, itemsResponse, error) in
+            if isSuccess {
+                print(itemsResponse)
+            }
+        })
+        
         self.showLoader(message: "Loading coffees...")
         
         let deliveryClient = DeliveryClient.init(projectId: AppConstants.projectId)

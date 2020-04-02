@@ -58,6 +58,7 @@
 		5857010C238E96E900E9EBDB /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585700FD238E96E900E9EBDB /* ArticleTableViewCell.swift */; };
 		5857010D238E96E900E9EBDB /* CafeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585700FE238E96E900E9EBDB /* CafeTableViewCell.swift */; };
 		5857010E238E96E900E9EBDB /* CoffeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585700FF238E96E900E9EBDB /* CoffeeTableViewCell.swift */; };
+		589CF9A624360FBE00BB5A82 /* TableTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589CF9A524360FBE00BB5A82 /* TableTesting.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 		585700FD238E96E900E9EBDB /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		585700FE238E96E900E9EBDB /* CafeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeTableViewCell.swift; sourceTree = "<group>"; };
 		585700FF238E96E900E9EBDB /* CoffeeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeTableViewCell.swift; sourceTree = "<group>"; };
+		589CF9A524360FBE00BB5A82 /* TableTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTesting.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* KenticoKontentDelivery_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KenticoKontentDelivery_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				585700F8238E96E900E9EBDB /* Cafe.swift */,
 				585700F9238E96E900E9EBDB /* Article.swift */,
 				585700FA238E96E900E9EBDB /* Coffee.swift */,
+				589CF9A524360FBE00BB5A82 /* TableTesting.swift */,
 			);
 			path = KontentModels;
 			sourceTree = "<group>";
@@ -531,19 +534,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-KenticoKontentDelivery_Tests/Pods-KenticoKontentDelivery_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
@@ -614,6 +609,7 @@
 				58570104238E96E900E9EBDB /* CoffeesViewController.swift in Sources */,
 				5857010E238E96E900E9EBDB /* CoffeeTableViewCell.swift in Sources */,
 				585700E3238E966B00E9EBDB /* AppConstants.swift in Sources */,
+				589CF9A624360FBE00BB5A82 /* TableTesting.swift in Sources */,
 				5857010D238E96E900E9EBDB /* CafeTableViewCell.swift in Sources */,
 				58570100238E96E900E9EBDB /* Extensions.swift in Sources */,
 				58570106238E96E900E9EBDB /* ArticlesViewController.swift in Sources */,

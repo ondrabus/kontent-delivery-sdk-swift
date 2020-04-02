@@ -7,6 +7,6 @@
 //
 
 struct KontentConstants {
-    static let liveDeliverEndpoint = "https://deliver.kontent.ai"
+    static let liveDeliverEndpoint = "https://qa-deliver.global.ssl.fastly.net"
     static let previewDeliverEndpoint = "https://preview-deliver.kontent.ai"
 }
