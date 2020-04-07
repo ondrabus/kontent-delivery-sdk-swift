@@ -10,12 +10,14 @@
 The Kentico Kontent Delivery SDK is a library used for retrieving content. You can use the SDK as a CocoaPod package or add it manually.
 
 ### Sample app
-The repository contains sample app which demonstrates basic usage of the SDK. It displays content from a Sample Project that demonstrates Kentico Kontent features and best practices. This fully featured project contains marketing content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any admin of a Kentico Kontent subscription [can generate one](https://app.kontent.ai/sample-project-generator). 
+The repository contains sample app which demonstrates basic usage of the SDK. It displays content from a Sample Project that demonstrates Kentico Kontent features and best practices. This fully featured project contains marketing content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any admin of a Kentico Kontent subscription [can generate one](https://docs.kontent.ai/tutorials/set-up-projects/manage-projects/managing-projects#a-creating-a-sample-project). 
 
 <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/splashScreens.png?raw=true" width="212"> <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/locations.png?raw=true" width="212">
 
 ## Quick start
+
 **1. Add a pod**  
+
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '12.0'
@@ -29,6 +31,7 @@ end
 ```bash
 $ pod install
 ```
+
 **2. Create a type object** - in this example, the type object is `Article`. It represents a Content type in Kentico Kontent that the retrieved content items are based on. This content type has three elements with following codenames: `title` (a text element),`teaser_image` (an asset element) and `post_date` (a DateTime element).
 ```swift
 import ObjectMapper
@@ -50,17 +53,23 @@ class Article: Mappable {
     }
 }
  ```
+ 
 **3. Prepare the Delivery client**
+
 ```swift
 import KenticoKontentDelivery
 
 let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID")
  ```
+ 
 **4. Prepare a query**
+
 ```swift
 let articlesQueryParameters = QueryBuilder.params().type(article).language("es-ES")
  ```
+ 
 **5. Get and use content items**
+
 ```swift
 client.getItems(modelType: Article.self, queryParameters: articleQueryParameters) { (isSuccess, itemsResponse, error) in
     if isSuccess {
@@ -126,7 +135,7 @@ import KenticoKontentDelivery
 let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", previewApiKey:"PREVIEW_API_KEY")
 ```
 
-For more details, see [Previewing unpublished content using the Delivery API](https://docs.kontent.ai/tutorials/write-and-collaborate/preview-content/previewing-unpublished-content).
+For more details, see [Previewing unpublished content using the Delivery API](https://docs.kontent.ai/tutorials/develop-apps/get-content/configuring-preview-for-content-items#a-set-up-content-preview-in-your-project).
 
 ### Getting content from secured project
 
@@ -205,7 +214,9 @@ public class Cafe: Mappable {
         country <- map["elements.country.value"]
     }
  ```
-### Basic items querying 
+ 
+### Basic items querying
+
 Once you have a `DeliveryClient` instance, you can start querying your project repository by calling methods on the instance. You need to pass your item model and query. You can create a query for a listing in two ways:
 - creating a custom string query:
 ```swift
@@ -252,7 +263,9 @@ client.getItem(modelType: Cafe.self, itemName: "boston") { (isSuccess, deliveryI
     }
 }
 ```
+
 ### Getting linked items
+
 You can get linked content items from `itemResponse` or `itemsResponse` object:
 ```swift
 let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID")
@@ -266,8 +279,11 @@ client.getItem(modelType: Article.self, itemName: "on_roasts", completionHandler
                             
                          
 ```
+
 ## Getting content types
+
 ### Get one content type
+
 ```swift
 client.getContentType(name: "coffee", completionHandler: { (isSuccess, contentType, error) in
     if !isSuccess {
@@ -281,6 +297,7 @@ client.getContentType(name: "coffee", completionHandler: { (isSuccess, contentTy
 ```
 
 ### Get multiple content types
+
 ```swift
 client.getContentTypes(skip: 2, limit: 4, completionHandler: { (isSuccess, contentTypesResponse, error) in
     if !isSuccess {
@@ -292,9 +309,11 @@ client.getContentTypes(skip: 2, limit: 4, completionHandler: { (isSuccess, conte
     }
 })
 ```
+
 ## Getting taxonomies
 
 ### Get taxonomy group
+
 ```swift
 let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID")
 client.getTaxonomyGroup(taxonomyGroupName: "personas", completionHandler: { (isSuccess, deliveryItem, error) in
@@ -311,6 +330,7 @@ client.getTaxonomyGroup(taxonomyGroupName: "personas", completionHandler: { (isS
 ```
 
 ### Get all taxonomies
+
 ```swift
 let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID")
 client.getTaxonomies(completionHandler: { (isSuccess, deliveryItems, error) in
@@ -327,12 +347,13 @@ client.getTaxonomies(completionHandler: { (isSuccess, deliveryItems, error) in
 ```
 
 ## Use image transformation
-Kentico Kontent supports image transformation by using URL parameters. 
-A helper class is provided to create the URL conveniently.
-However, read [this documentation](https://docs.kontent.ai/reference/image-transformation) to understand the restriction of parameters before using the helper class, as the helper class does not validate the input parameter.
 
+Kentico Kontent supports image transformation by using URL parameters. A helper class is provided to create the URL conveniently.
+
+However, see our [documentation on image transformation](https://docs.kontent.ai/reference/image-transformation) to understand the restriction of parameters before using the helper class, as the helper class does not validate the input parameters.
 
 Here is a sample usage:
+
 ```swift
 let originalUrl = "https://example.com/sample-image.jpg"
 let transformedUrl = ImageUrlBuilder(baseUrl: originalUrl)
@@ -347,7 +368,9 @@ let transformedUrl = ImageUrlBuilder(baseUrl: originalUrl)
 ```
 
 ## Local Development
+
 For running SDK with sample app locally follow the next steps.
+
 1. Download the repository.
 1. In terminal navigate to */Example*.
 1. Run `pod install` ([Cocoapods](https://cocoapods.org/) must be installed).
@@ -355,19 +378,24 @@ For running SDK with sample app locally follow the next steps.
 1. Run.
 
 ## Debug
+
 If you want to view debug info from both clients set client's `enableDebugLogging` attribute:
 ```swift
 let deliveryClient = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", enableDebugLogging = true)
 ```
 
 ## Releasing a new version of the Cocoapod package
+
 Travis CI automatically builds and releases a new version of the pod when added new tag.
 
 ## Documentation
+
 You can find full API reference documentation [here](https://kentico.github.io/kontent-delivery-sdk-swift/index.html).
 
 ## Updating generated documentation
+
 We use Jazzy which is a command-line utility that generates documentation for Swift. For updating documentation perform the next steps:
+
 1. Install Jazzy `[sudo] gem install jazzy`
 1. Run `jazzy` from the root of the repository.
 1. Commit changes from */Docs* directory.
