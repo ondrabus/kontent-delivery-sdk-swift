@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias QueryBuilder = [QueryParameter]
+public typealias QueryBuilder = [QueryParameter]
 
-extension Array where Element == QueryParameter {
+public extension Array where Element == QueryParameter {
     private func add(key: QueryParameterKey, value: String) -> [QueryParameter] {
         return self + [QueryParameter(parameterKey: key, parameterValue: value)]
     }
