@@ -7,42 +7,42 @@
 
 import Foundation
 
-typealias QueryBuilder = [QueryParameter]
+public typealias QueryBuilder = [QueryParameter]
 
-extension Array where Element == QueryParameter {
+public extension Array where Element == QueryParameter {
     private func add(key: QueryParameterKey, value: String) -> [QueryParameter] {
         return self + [QueryParameter(parameterKey: key, parameterValue: value)]
     }
     
-    func id(_ value: String) -> [QueryParameter] {
+    public func id(_ value: String) -> [QueryParameter] {
         return add(key: .id, value: value)
     }
     
-    func name(_ value: String) -> [QueryParameter] {
+    public func name(_ value: String) -> [QueryParameter] {
         return add(key: .name, value: value)
     }
     
-    func codename(_ value: String) -> [QueryParameter] {
+    public func codename(_ value: String) -> [QueryParameter] {
         return add(key: .codename, value: value)
     }
     
-    func type(_ value: String) -> [QueryParameter] {
+    public func type(_ value: String) -> [QueryParameter] {
         return add(key: .type, value: value)
     }
     
-    func sitemapLocations(_ value: String) -> [QueryParameter] {
+    public func sitemapLocations(_ value: String) -> [QueryParameter] {
         return add(key: .sitemapLocations, value: value)
     }
     
-    func language(_ value: String) -> [QueryParameter] {
+    public func language(_ value: String) -> [QueryParameter] {
         return add(key: .language, value: value)
     }
     
-    static func params() -> [QueryParameter] {
+    public static func params() -> [QueryParameter] {
         return []
     }
     
-    func queryString() -> String {
+    public func queryString() -> String {
         return self.map{$0.getQueryStringParameter()}.joined(separator: "&")
     }
 }
