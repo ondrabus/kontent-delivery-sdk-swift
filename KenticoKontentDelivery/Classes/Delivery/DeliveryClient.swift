@@ -213,7 +213,10 @@ public class DeliveryClient {
     }
     
     private func sendGetItemsRequest<T>(url: String, completionHandler: @escaping (Bool, ItemsResponse<T>?, Error?) -> ()) where T: Mappable {
-        sessionManager.request(url, headers: self.headers).responseObject { (response: DataResponse<ItemsResponse<T>>) in
+        sessionManager
+            .request(url, headers: self.headers)
+            .validate(statusCode: 200..<300)
+            .responseObject { (response: DataResponse<ItemsResponse<T>>) in
             
             switch response.result {
             case .success:
@@ -234,7 +237,10 @@ public class DeliveryClient {
     }
     
     private func sendGetItemRequest<T>(url: String, completionHandler: @escaping (Bool, ItemResponse<T>?, Error?) -> ()) where T: Mappable {
-        sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse<ItemResponse<T>>) in
+        sessionManager
+            .request(url, headers: self.headers)
+            .validate(statusCode: 200..<300)
+            .responseObject() { (response: DataResponse<ItemResponse<T>>) in
             
             switch response.result {
             case .success:
@@ -254,7 +260,10 @@ public class DeliveryClient {
     }
     
     private func sendGetContentTypesRequest(url: String, completionHandler: @escaping (Bool, ContentTypesResponse?, Error?) -> ()) {
-        sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentTypesResponse>) in
+        sessionManager
+            .request(url, headers: self.headers)
+            .validate(statusCode: 200..<300)
+            .responseObject() { (response: DataResponse<ContentTypesResponse>) in
             
             switch response.result {
             case .success:
@@ -274,7 +283,10 @@ public class DeliveryClient {
     }
     
     private func sendGetContentTypeRequest(url: String, completionHandler: @escaping (Bool, ContentType?, Error?) -> ()) {
-        sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse<ContentType>) in
+        sessionManager
+            .request(url, headers: self.headers)
+            .validate(statusCode: 200..<300)
+            .responseObject() { (response: DataResponse<ContentType>) in
             
             switch response.result {
             case .success:
@@ -294,7 +306,10 @@ public class DeliveryClient {
     }
     
     private func sendGetTaxonomiesRequest(url: String, completionHandler: @escaping (Bool, [TaxonomyGroup]?, Error?) -> ()) {
-        sessionManager.request(url, headers: self.headers).responseArray(keyPath: "taxonomies") { (response: DataResponse<[TaxonomyGroup]>) in
+        sessionManager
+            .request(url, headers: self.headers)
+            .validate(statusCode: 200..<300)
+            .responseArray(keyPath: "taxonomies") { (response: DataResponse<[TaxonomyGroup]>) in
             
             switch response.result {
             case .success:
@@ -314,7 +329,10 @@ public class DeliveryClient {
     }
     
     private func sendGetTaxonomyRequest(url: String, completionHandler: @escaping (Bool, TaxonomyGroup?, Error?) -> ()) {
-        sessionManager.request(url, headers: self.headers).responseObject { (response: DataResponse<TaxonomyGroup>) in
+        sessionManager
+            .request(url, headers: self.headers)
+            .validate(statusCode: 200..<300)
+            .responseObject { (response: DataResponse<TaxonomyGroup>) in
             
             switch response.result {
             case .success:
@@ -428,7 +446,8 @@ public class DeliveryClient {
     
     private func getHeaders() -> HTTPHeaders {
         var headers: HTTPHeaders = [
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Content-Type": "application/json"
         ]
         
         if let apiKey = previewApiKey {
