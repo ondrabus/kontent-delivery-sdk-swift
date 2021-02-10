@@ -12,7 +12,6 @@ jobs:
         uses: actions/checkout@master
       - name: Build and test
         run: |
-          cd Example
           gem install cocoapods
           pod repo update
           pod install --project-directory=Example
