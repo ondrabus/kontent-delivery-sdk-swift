@@ -1,8 +1,6 @@
 # Kentico Kontent Delivery SDK
 
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
-
-[![Travis](https://travis-ci.com/Kentico/kontent-delivery-sdk-swift.svg?branch=master)](https://travis-ci.com/Kentico/kontent-delivery-sdk-swift)
 [![CocoaPods](https://img.shields.io/cocoapods/v/KenticoKontentDelivery.svg)](https://cocoapods.org/pods/KenticoKontentDelivery)
 [![CocoaPods](https://img.shields.io/cocoapods/p/KenticoKontentDelivery.svg)](https://cocoapods.org/pods/KenticoKontentDelivery)
 
@@ -389,7 +387,7 @@ let deliveryClient = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", enableDeb
 1. Update tracking header `X-KC-SDKID`.
 1. Update `s.version` in `.podspec`.
 1. Create a new release with a new tag.
-1. Travis CI automatically builds and releases a new version of the pod when added new tag.
+1. GitHub Actions automatically builds and releases a new version of the pod when added new tag.
 
 ## Documentation
 
