@@ -17,7 +17,7 @@ jobs:
           pod install --project-directory=Example
           set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/KenticoKontentDelivery.xcworkspace -scheme KenticoKontentDelivery-Example -sdk iphonesimulator -destination 'name=iPhone 8' ONLY_ACTIVE_ARCH=NO | xcpretty
       - name: Publish Cocoapod
-        run: scripts/push.sh
+        run: chmod +x scripts/push.sh && scripts/push.sh
       
         env: 
          destination: ${{ matrix.destination }}
