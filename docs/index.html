@@ -8,12 +8,20 @@
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
     <a title="KenticoKontentDelivery  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">KenticoKontentDelivery Docs</a> (89% documented)</p>
+        <p><a href="index.html">KenticoKontentDelivery 2.2.0 Docs</a> (84% documented)</p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -127,10 +135,26 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Array.html">Array</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Protocols.html#/s:22KenticoKontentDelivery5BlockP">Block</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:22KenticoKontentDelivery12QueryBuildera">QueryBuilder</a>
               </li>
             </ul>
           </li>
@@ -140,34 +164,374 @@
         <section>
           <section class="section">
             
-            <h1 id='kenticokontentdelivery' class='heading'>KenticoKontentDelivery</h1>
+            <h1 id='kentico-kontent-delivery-sdk' class='heading'>Kentico Kontent Delivery SDK</h1>
 
-<p><a href="https://travis-ci.org/makma/KenticoKontentDelivery"><img src="https://img.shields.io/travis/makma/KenticoKontentDelivery.svg?style=flat" alt="CI Status"></a>
-<a href="https://cocoapods.org/pods/KenticoKontentDelivery"><img src="https://img.shields.io/cocoapods/v/KenticoKontentDelivery.svg?style=flat" alt="Version"></a>
-<a href="https://cocoapods.org/pods/KenticoKontentDelivery"><img src="https://img.shields.io/cocoapods/l/KenticoKontentDelivery.svg?style=flat" alt="License"></a>
-<a href="https://cocoapods.org/pods/KenticoKontentDelivery"><img src="https://img.shields.io/cocoapods/p/KenticoKontentDelivery.svg?style=flat" alt="Platform"></a></p>
-<h2 id='example' class='heading'>Example</h2>
+<p><a href="https://stackoverflow.com/tags/kentico-kontent"><img src="https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white" alt="Stack Overflow"></a></p>
 
-<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
-<h2 id='requirements' class='heading'>Requirements</h2>
-<h2 id='installation' class='heading'>Installation</h2>
+<p><a href="https://travis-ci.com/Kentico/kontent-delivery-sdk-swift"><img src="https://travis-ci.com/Kentico/kontent-delivery-sdk-swift.svg?branch=master" alt="Travis"></a>
+<a href="https://cocoapods.org/pods/KenticoKontentDelivery"><img src="https://img.shields.io/cocoapods/v/KenticoKontentDelivery.svg" alt="CocoaPods"></a>
+<a href="https://cocoapods.org/pods/KenticoKontentDelivery"><img src="https://img.shields.io/cocoapods/p/KenticoKontentDelivery.svg" alt="CocoaPods"></a></p>
+<h2 id='summary' class='heading'>Summary</h2>
 
-<p>KenticoKontentDelivery is available through <a href="https://cocoapods.org">CocoaPods</a>. To install
-it, simply add the following line to your Podfile:</p>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'KenticoKontentDelivery'</span>
+<p>The Kentico Kontent Delivery SDK is a library used for retrieving content. You can use the SDK as a CocoaPod package or add it manually.</p>
+<h3 id='sample-app' class='heading'>Sample app</h3>
+
+<p>The repository contains sample app which demonstrates basic usage of the SDK. It displays content from a Sample Project that demonstrates Kentico Kontent features and best practices. This fully featured project contains marketing content for Dancing Goat – an imaginary chain of coffee shops. If you don&rsquo;t have your own Sample Project, any admin of a Kentico Kontent subscription <a href="https://docs.kontent.ai/tutorials/set-up-projects/manage-projects/managing-projects#a-creating-a-sample-project">can generate one</a>. </p>
+
+<p><img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/splashScreens.png?raw=true" width="212"> <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/locations.png?raw=true" width="212"></p>
+<h2 id='quick-start' class='heading'>Quick start</h2>
+
+<p><strong>1. Add a pod</strong>  </p>
+<pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
+<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'12.0'</span>
+<span class="n">use_frameworks!</span>
+
+<span class="n">target</span> <span class="s1">'&lt;Your Target Name&gt;'</span> <span class="k">do</span>
+    <span class="n">pod</span> <span class="s1">'KenticoKontentDelivery'</span>
+<span class="k">end</span>
 </code></pre>
-<h2 id='author' class='heading'>Author</h2>
+<pre class="highlight shell"><code><span class="nv">$ </span>pod <span class="nb">install</span>
+</code></pre>
 
-<p>makma, <a href="mailto:martinm@kentico.com">martinm@kentico.com</a></p>
+<p><strong>2. Create a type object</strong> - in this example, the type object is <code>Article</code>. It represents a Content type in Kentico Kontent that the retrieved content items are based on. This content type has three elements with following codenames: <code>title</code> (a text element),<code>teaser_image</code> (an asset element) and <code>post_date</code> (a DateTime element).</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ObjectMapper</span>
+<span class="kd">import</span> <span class="kt">KenticoKontentDelivery</span>
+
+<span class="kd">class</span> <span class="kt">Article</span><span class="p">:</span> <span class="kt">Mappable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">TextElement</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">asset</span><span class="p">:</span> <span class="kt">AssetElement</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">postDate</span><span class="p">:</span> <span class="kt">DateTimeElement</span><span class="p">?</span>
+
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">){</span>
+        <span class="k">let</span> <span class="nv">mapper</span> <span class="o">=</span> <span class="kt">MapElement</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="n">map</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="nv">elementName</span><span class="p">:</span> <span class="s">"title"</span><span class="p">,</span> <span class="nv">elementType</span><span class="p">:</span> <span class="kt">TextElement</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+        <span class="n">asset</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="nv">elementName</span><span class="p">:</span> <span class="s">"teaser_image"</span><span class="p">,</span> <span class="nv">elementType</span><span class="p">:</span> <span class="kt">AssetElement</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+        <span class="n">postDate</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="nv">elementName</span><span class="p">:</span> <span class="s">"post_date"</span><span class="p">,</span> <span class="nv">elementType</span><span class="p">:</span> <span class="kt">DateTimeElement</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><strong>3. Prepare the Delivery client</strong></p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">KenticoKontentDelivery</span>
+
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">)</span>
+</code></pre>
+
+<p><strong>4. Prepare a query</strong></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">articlesQueryParameters</span> <span class="o">=</span> <span class="kt">QueryBuilder</span><span class="o">.</span><span class="nf">params</span><span class="p">()</span><span class="o">.</span><span class="nf">type</span><span class="p">(</span><span class="n">article</span><span class="p">)</span><span class="o">.</span><span class="nf">language</span><span class="p">(</span><span class="s">"es-ES"</span><span class="p">)</span>
+</code></pre>
+
+<p><strong>5. Get and use content items</strong></p>
+<pre class="highlight swift"><code><span class="n">client</span><span class="o">.</span><span class="nf">getItems</span><span class="p">(</span><span class="nv">modelType</span><span class="p">:</span> <span class="kt">Article</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">queryParameters</span><span class="p">:</span> <span class="n">articleQueryParameters</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccess</span><span class="p">,</span> <span class="n">itemsResponse</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">isSuccess</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">articles</span> <span class="o">=</span> <span class="n">itemsResponse</span><span class="p">?</span><span class="o">.</span><span class="n">items</span> <span class="p">{</span>
+            <span class="c1">// use your articles here</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p><a href="https://cocoapods.org">CocoaPods</a> is a dependency manager for Cocoa projects. You can install it with the following command:</p>
+<pre class="highlight shell"><code><span class="nv">$ </span>gem <span class="nb">install </span>cocoapods
+</code></pre>
+
+<p>To integrate Kentico Kontent into your Xcode project using CocoaPods, specify it in your <code>Podfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
+<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'10.0'</span>
+<span class="n">use_frameworks!</span>
+
+<span class="n">target</span> <span class="s1">'&lt;Your Target Name&gt;'</span> <span class="k">do</span>
+    <span class="n">pod</span> <span class="s1">'KenticoKontentDelivery'</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Then, run the following command:</p>
+<pre class="highlight shell"><code><span class="nv">$ </span>pod <span class="nb">install</span>
+</code></pre>
+<h2 id='using-the-deliveryclient' class='heading'>Using the DeliveryClient</h2>
+
+<p>The <code><a href="Classes/DeliveryClient.html">DeliveryClient</a></code> class is the main class of the SDK for getting content. Using this class, you can retrieve content from your Kentico Kontent projects.</p>
+
+<p>To create an instance of the class, you need to provide a <a href="https://docs.kontent.ai/tutorials/develop-apps/get-content/getting-content#section-getting-content-items">project ID</a>:</p>
+<pre class="highlight swift"><code><span class="c1">// Initializes an instance of the DeliveryClient client</span>
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="s">"975bf280-fd91-488c-994c-2f04416e5ee3"</span><span class="p">)</span>
+</code></pre>
+
+<p>Once you create a <code><a href="Classes/DeliveryClient.html">DeliveryClient</a></code>, you can start querying your project repository by calling methods on the client instance. See <a href="#basic-items-querying">Basic querying</a> for details.</p>
+<h3 id='previewing-unpublished-content' class='heading'>Previewing unpublished content</h3>
+
+<p>To retrieve unpublished content, you need to create a <code><a href="Classes/DeliveryClient.html">DeliveryClient</a></code> with both Project ID and Preview API key. Each Kentico Kontent project has its own Preview API key. </p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">KenticoKontentDelivery</span>
+
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">,</span> <span class="nv">previewApiKey</span><span class="p">:</span><span class="s">"PREVIEW_API_KEY"</span><span class="p">)</span>
+</code></pre>
+
+<p>For more details, see <a href="https://docs.kontent.ai/tutorials/develop-apps/get-content/configuring-preview-for-content-items#a-set-up-content-preview-in-your-project">Previewing unpublished content using the Delivery API</a>.</p>
+<h3 id='getting-content-from-secured-project' class='heading'>Getting content from secured project</h3>
+
+<p>To retrieve content from secured project, you need to create a <code><a href="Classes/DeliveryClient.html">DeliveryClient</a></code> with both Project ID and Secure API key. </p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">KenticoKontentDelivery</span>
+
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">,</span> <span class="nv">secureApiKey</span><span class="p">:</span><span class="s">"SECURE_API_KEY"</span><span class="p">)</span>
+</code></pre>
+
+<p>For more details, see <a href="https://docs.kontent.ai/reference/kentico-kontent-apis-overview#secure-access">Securing the Delivery API</a>.</p>
+<h3 id='configuring-retry-policy' class='heading'>Configuring retry policy</h3>
+
+<p>The client can retry getting items after it encounters errors. By default, the retry policy is enabled, and the maximum retry attempts is 5.
+You can configure the maximum retry attempts when creating a <code><a href="Classes/DeliveryClient.html">DeliveryClient</a></code>.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">KenticoKontentDelivery</span>
+
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">,</span> <span class="nv">isRetryEnabled</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">maxRetryAttempts</span><span class="p">:</span> <span class="kt">CUSTOM_MAX_ATTEMPTS_NUMBER</span><span class="p">)</span>
+</code></pre>
+
+<p>You can also disable the retry policy.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">KenticoKontentDelivery</span>
+
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">,</span> <span class="nv">isRetryEnabled</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+</code></pre>
+<h2 id='getting-items' class='heading'>Getting items</h2>
+<h3 id='using-strongly-typed-models' class='heading'>Using strongly typed models</h3>
+
+<p>In order to receive strongly typed items you need to implement your item model. It&rsquo;s necessary to conform to <code>Mappable</code> protocol and implement mapping functionality. You can use your own mapping or our strongly typed element types.</p>
+
+<ul>
+<li>Element types mapping:
+&ldquo;`swift
+import ObjectMapper</li>
+</ul>
+
+<p>class Article: Mappable {
+    var title: TextElement?
+    var asset: AssetElement?
+    var postDate: DateTimeElement?</p>
+<pre class="highlight plaintext"><code>required init?(map: Map){
+    let mapper = MapElement.init(map: map)
+    title = mapper.map(elementName: "title", elementType: TextElement.self)
+    asset = mapper.map(elementName: "teaser_image", elementType: AssetElement.self)
+    postDate = mapper.map(elementName: "post_date", elementType: DateTimeElement.self)
+}
+
+func mapping(map: Map) {
+
+}
+</code></pre>
+<pre class="highlight plaintext"><code>
+ - Custom mapping:
+```swift
+import ObjectMapper
+
+public class Cafe: Mappable {
+    public var city: String?
+    public var street: String?
+    public var country: String?
+
+    public required init?(map: Map){
+
+    }
+
+    public func mapping(map: Map) {
+        city &lt;- map["elements.city.value"]
+        street &lt;- map["elements.street.value"]
+        country &lt;- map["elements.country.value"]
+    }
+</code></pre>
+<h3 id='basic-items-querying' class='heading'>Basic items querying</h3>
+
+<p>Once you have a <code><a href="Classes/DeliveryClient.html">DeliveryClient</a></code> instance, you can start querying your project repository by calling methods on the instance. You need to pass your item model and query. You can create a query for a listing in two ways:</p>
+
+<ul>
+<li>creating a custom string query:
+<code>swift
+let customQuery = &quot;items?system.type=article&amp;order=elements.post_date[desc]&quot;
+client.getItems(modelType: Article.self, customQuery: customQuery) { (isSuccess, itemsResponse, error) in ...
+</code>
+
+<ul>
+<li>using a query parameters array:
+<code>swift
+let coffeesQueryParameters = QueryBuilder.params().type(contentType).language(&quot;es-ES&quot;)
+client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters) { (isSuccess, itemsResponse, error) in ...
+</code></li>
+</ul></li>
+</ul>
+
+<p>Then you can use your obtained items in the completetion handler:</p>
+<pre class="highlight swift"><code> <span class="c1">// Retrieves a list of all content items of certain type</span>
+<span class="k">let</span> <span class="nv">coffeesQueryParameters</span> <span class="o">=</span> <span class="kt">QueryBuilder</span><span class="o">.</span><span class="nf">params</span><span class="p">()</span><span class="o">.</span><span class="nf">type</span><span class="p">(</span><span class="s">"coffee"</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="nf">getItems</span><span class="p">(</span><span class="nv">modelType</span><span class="p">:</span> <span class="kt">Coffee</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">queryParameters</span><span class="p">:</span> <span class="n">coffeesQueryParameters</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccess</span><span class="p">,</span> <span class="n">itemsResponse</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="n">isSuccess</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">coffees</span> <span class="o">=</span> <span class="n">itemsResponse</span><span class="p">?</span><span class="o">.</span><span class="n">items</span> <span class="p">{</span>
+                <span class="c1">// Use your items here</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</code></pre>
+
+<p>You can also retrieve just a single item:</p>
+<pre class="highlight swift"><code><span class="c1">// Retrieves a single content item</span>
+<span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="nf">getItem</span><span class="p">(</span><span class="nv">modelType</span><span class="p">:</span> <span class="kt">Cafe</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">itemName</span><span class="p">:</span> <span class="s">"boston"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccess</span><span class="p">,</span> <span class="n">deliveryItem</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">isSuccess</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">cafe</span> <span class="o">=</span> <span class="n">deliveryItem</span><span class="o">.</span><span class="n">item</span> <span class="p">{</span>
+            <span class="c1">// Use your item here</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='getting-linked-items' class='heading'>Getting linked items</h3>
+
+<p>You can get linked content items from <code>itemResponse</code> or <code>itemsResponse</code> object:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="nf">getItem</span><span class="p">(</span><span class="nv">modelType</span><span class="p">:</span> <span class="kt">Article</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">itemName</span><span class="p">:</span> <span class="s">"on_roasts"</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccess</span><span class="p">,</span> <span class="n">itemResponse</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">isSuccess</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">articleCodeName</span> <span class="nf">in</span> <span class="p">(</span><span class="n">itemResponse</span><span class="p">?</span><span class="o">.</span><span class="n">item</span><span class="p">?</span><span class="o">.</span><span class="n">relatedArticles</span><span class="p">?</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">!</span> <span class="p">{</span>
+                    <span class="k">let</span> <span class="nv">relatedArticle</span> <span class="o">=</span> <span class="n">itemResponse</span><span class="p">?</span><span class="o">.</span><span class="nf">getLinkedItems</span><span class="p">(</span><span class="nv">codename</span><span class="p">:</span> <span class="n">articleCodeName</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">Article</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre>
+<h2 id='getting-content-types' class='heading'>Getting content types</h2>
+<h3 id='get-one-content-type' class='heading'>Get one content type</h3>
+<pre class="highlight swift"><code><span class="n">client</span><span class="o">.</span><span class="nf">getContentType</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"coffee"</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccess</span><span class="p">,</span> <span class="n">contentType</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="o">!</span><span class="n">isSuccess</span> <span class="p">{</span>
+        <span class="nf">fail</span><span class="p">(</span><span class="s">"Response is not successful. Error: </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="n">error</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">type</span> <span class="o">=</span> <span class="n">contentType</span> <span class="p">{</span>
+    <span class="c1">// use content type here</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre>
+<h3 id='get-multiple-content-types' class='heading'>Get multiple content types</h3>
+<pre class="highlight swift"><code><span class="n">client</span><span class="o">.</span><span class="nf">getContentTypes</span><span class="p">(</span><span class="nv">skip</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccess</span><span class="p">,</span> <span class="n">contentTypesResponse</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="o">!</span><span class="n">isSuccess</span> <span class="p">{</span>
+        <span class="nf">fail</span><span class="p">(</span><span class="s">"Response is not successful. Error: </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="n">error</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">response</span> <span class="o">=</span> <span class="n">contentTypesResponse</span> <span class="p">{</span>
+    <span class="c1">// use content types here</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre>
+<h2 id='getting-taxonomies' class='heading'>Getting taxonomies</h2>
+<h3 id='get-taxonomy-group' class='heading'>Get taxonomy group</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="nf">getTaxonomyGroup</span><span class="p">(</span><span class="nv">taxonomyGroupName</span><span class="p">:</span> <span class="s">"personas"</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccess</span><span class="p">,</span> <span class="n">deliveryItem</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+   <span class="k">if</span> <span class="n">isSuccess</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="k">let</span> <span class="nv">taxonomyGroup</span> <span class="o">=</span> <span class="n">deliveryItems</span><span class="o">.</span><span class="n">item</span> <span class="p">{</span>
+        <span class="c1">// use your taxonomy group here</span>
+       <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+             <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+         <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre>
+<h3 id='get-all-taxonomies' class='heading'>Get all taxonomies</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="nf">getTaxonomies</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">isSuccess</span><span class="p">,</span> <span class="n">deliveryItems</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+   <span class="k">if</span> <span class="n">isSuccess</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="k">let</span> <span class="nv">taxonomies</span> <span class="o">=</span> <span class="n">deliveryItems</span><span class="p">?</span><span class="o">.</span><span class="n">items</span> <span class="p">{</span>
+        <span class="c1">// use your taxonomies here</span>
+       <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+             <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+         <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre>
+<h2 id='use-image-transformation' class='heading'>Use image transformation</h2>
+
+<p>Kentico Kontent supports image transformation by using URL parameters. A helper class is provided to create the URL conveniently.</p>
+
+<p>However, see our <a href="https://docs.kontent.ai/reference/image-transformation">documentation on image transformation</a> to understand the restriction of parameters before using the helper class, as the helper class does not validate the input parameters.</p>
+
+<p>Here is a sample usage:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">originalUrl</span> <span class="o">=</span> <span class="s">"https://example.com/sample-image.jpg"</span>
+<span class="k">let</span> <span class="nv">transformedUrl</span> <span class="o">=</span> <span class="kt">ImageUrlBuilder</span><span class="p">(</span><span class="nv">baseUrl</span><span class="p">:</span> <span class="n">originalUrl</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withWidth</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withHeight</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withFitMode</span><span class="p">(</span><span class="o">.</span><span class="kt">Clip</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withDpr</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withBackGroundColor</span><span class="p">(</span><span class="nv">rgbColor</span><span class="p">:</span> <span class="mh">0x330FAA</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">withFormat</span><span class="p">(</span><span class="o">.</span><span class="n">png</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">url</span>
+<span class="c1">// transformedUrl = https://example.com/sample-image.jpg?w=300&amp;h=500&amp;fit=clip&amp;dpr=3.0&amp;bg=330FAA&amp;fm=png</span>
+</code></pre>
+<h2 id='local-development' class='heading'>Local Development</h2>
+
+<p>For running SDK with sample app locally follow the next steps.</p>
+
+<ol>
+<li>Download the repository.</li>
+<li>In terminal navigate to <em>/Example</em>.</li>
+<li>Run <code>pod install</code> (<a href="https://cocoapods.org/">Cocoapods</a> must be installed).</li>
+<li>Open <code>KenticoKontentDelivery.xcworkspace</code> in XCode.</li>
+<li>Run.</li>
+</ol>
+<h2 id='debug' class='heading'>Debug</h2>
+
+<p>If you want to view debug info from both clients set client&rsquo;s <code>enableDebugLogging</code> attribute:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">deliveryClient</span> <span class="o">=</span> <span class="kt">DeliveryClient</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">projectId</span><span class="p">:</span> <span class="s">"YOUR_PROJECT_ID"</span><span class="p">,</span> <span class="n">enableDebugLogging</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
+</code></pre>
+<h2 id='releasing-a-new-version-of-the-cocoapod-package' class='heading'>Releasing a new version of the Cocoapod package</h2>
+
+<ol>
+<li>Update tracking header <code>X-KC-SDKID</code>.</li>
+<li>Update <code>s.version</code> in <code>.podspec</code>.</li>
+<li>Create a new release with a new tag.</li>
+<li>Travis CI automatically builds and releases a new version of the pod when added new tag.</li>
+</ol>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>You can find full API reference documentation <a href="https://kentico.github.io/kontent-delivery-sdk-swift/index.html">here</a>.</p>
+<h2 id='updating-generated-documentation' class='heading'>Updating generated documentation</h2>
+
+<p>We use Jazzy which is a command-line utility that generates documentation for Swift. For updating documentation perform the next steps:</p>
+
+<ol>
+<li>Install Jazzy <code>[sudo] gem install jazzy</code></li>
+<li>Run <code>jazzy</code> from the root of the repository.</li>
+<li>Commit changes from <em>/Docs</em> directory.</li>
+</ol>
+<h2 id='further-information' class='heading'>Further information</h2>
+
+<p>For more developer resources, visit the Kentico Kontent tutorials at <a href="https://docs.kontent.ai/tutorials/develop-apps">https://docs.kontent.ai/tutorials/develop-apps</a>.</p>
+<h2 id='feedback-amp-contributing' class='heading'>Feedback &amp; Contributing</h2>
+
+<p>Check out the <a href="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/CONTRIBUTING.md">contributing</a> page to see the best places to file issues, start discussions, and begin contributing.</p>
 <h2 id='license' class='heading'>License</h2>
 
-<p>KenticoKontentDelivery is available under the MIT license. See the LICENSE file for more info.</p>
+<p>Kentico Kontent Delivery SDK is available under the MIT license. See the LICENSE file for more information.</p>
+
+<p><img src="https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kontent-delivery-sdk-swift?pixel" alt="Analytics"></p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://github.com/kentico/kontent-delivery-sdk-swift" target="_blank" rel="external">makma</a>. All rights reserved. (Last updated: 2019-11-27)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/kentico/kontent-delivery-sdk-swift" target="_blank" rel="external">makma</a>. All rights reserved. (Last updated: 2021-02-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
