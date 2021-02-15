@@ -18,6 +18,5 @@ jobs:
           set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/KenticoKontentDelivery.xcworkspace -scheme KenticoKontentDelivery-Example -sdk iphonesimulator -destination 'name=iPhone 11' ONLY_ACTIVE_ARCH=NO | xcpretty
       - name: Publish Cocoapod
         run: chmod +x scripts/push.sh && scripts/push.sh
-      
-        env: 
-         destination: ${{ matrix.destination }}
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
