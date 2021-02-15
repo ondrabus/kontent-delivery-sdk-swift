@@ -3,8 +3,8 @@ on:
     types: [published]
 name: Publish to Cocoapods
 jobs:
-  Publish to Cocoapods:
-    name: publish-to-cocoapods
+  publish-to-cocoapods:
+    name: Publish to Cocoapods
     runs-on: macOS-latest
     strategy:
         matrix:
@@ -18,7 +18,7 @@ jobs:
           pod repo update
           pod install --project-directory=Example
           set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/KenticoKontentDelivery.xcworkspace -scheme KenticoKontentDelivery-Example -sdk iphonesimulator -destination 'name=iPhone 11' ONLY_ACTIVE_ARCH=NO | xcpretty
-      - name: publish-cocoapod
+      - name: Publish Cocoapod
         run: chmod +x scripts/push.sh && scripts/push.sh
         env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
