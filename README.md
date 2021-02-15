@@ -389,7 +389,7 @@ let deliveryClient = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", enableDeb
 1. Update tracking header `X-KC-SDKID`.
 1. Update `s.version` in `.podspec`.
 1. Create a new release with a new tag.
-1. Travis CI automatically builds and releases a new version of the pod when added new tag.
+1. GitHub Actions automatically builds and releases a new version of the pod when added new tag.
 
 ## Documentation
 
