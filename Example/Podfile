@@ -1,5 +1,6 @@
 use_frameworks!
 platform :ios, '11.0'
+source 'https://cdn.cocoapods.org/'
 
 target 'KenticoKontentDelivery_Example' do
   pod 'KenticoKontentDelivery', :path => '../'

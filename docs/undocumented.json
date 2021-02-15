@@ -1,138 +1,215 @@
 {
   "warnings": [
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/LinkedItemsElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Delivery/ItemResponse.swift",
+      "line": 16,
+      "symbol": "ItemResponse.map",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Delivery/ItemsResponse.swift",
+      "line": 16,
+      "symbol": "ItemsResponse.map",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/LinkedItemsElement.swift",
       "line": 19,
       "symbol": "LinkedItemsElement.value",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/Objects/MultipleChoice.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/Objects/MultipleChoice.swift",
       "line": 17,
       "symbol": "MultipleChoice.codename",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
       "line": 18,
       "symbol": "RichTextElement.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
       "line": 19,
       "symbol": "RichTextElement.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
       "line": 20,
       "symbol": "RichTextElement.value",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
       "line": 21,
       "symbol": "RichTextElement.blocks",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
       "line": 22,
       "symbol": "RichTextElement.inlineImages",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
       "line": 23,
       "symbol": "RichTextElement.htmlContent",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
       "line": 24,
       "symbol": "RichTextElement.linkedItems",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/RichTextElement.swift",
       "line": 25,
       "symbol": "RichTextElement.htmlContentString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Models/ElementTypes/TaxonomyElement.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Models/ElementTypes/TaxonomyElement.swift",
       "line": 19,
       "symbol": "TaxonomyElement.value",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryBuilder.swift",
+      "line": 10,
+      "symbol": "QueryBuilder",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryBuilder.swift",
+      "line": 17,
+      "symbol": "Array.id(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryBuilder.swift",
+      "line": 21,
+      "symbol": "Array.name(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryBuilder.swift",
+      "line": 25,
+      "symbol": "Array.codename(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryBuilder.swift",
+      "line": 29,
+      "symbol": "Array.type(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryBuilder.swift",
+      "line": 33,
+      "symbol": "Array.sitemapLocations(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryBuilder.swift",
+      "line": 37,
+      "symbol": "Array.language(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryBuilder.swift",
+      "line": 41,
+      "symbol": "Array.params()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryBuilder.swift",
+      "line": 45,
+      "symbol": "Array.queryString()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
       "line": 12,
       "symbol": "QueryParameterKey.id",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
       "line": 13,
       "symbol": "QueryParameterKey.name",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
       "line": 14,
       "symbol": "QueryParameterKey.codename",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
       "line": 15,
       "symbol": "QueryParameterKey.type",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
       "line": 16,
       "symbol": "QueryParameterKey.sitemapLocations",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Query/QueryParameterKey.swift",
       "line": 17,
       "symbol": "QueryParameterKey.language",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Taxonomies/TaxonomyTerm.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Taxonomies/TaxonomyTerm.swift",
       "line": 17,
       "symbol": "TaxonomyTerm.codename",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery/KenticoKontentDelivery/Classes/Taxonomies/TaxonomyTerm.swift",
+      "file": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift/KenticoKontentDelivery/Classes/Taxonomies/TaxonomyTerm.swift",
       "line": 19,
       "symbol": "TaxonomyTerm.terms",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/martinm/Documents/git-projects/KenticoKontentDelivery"
+  "source_directory": "/Users/martinm/Documents/git-projects/kontent-delivery-sdk-swift"
 }

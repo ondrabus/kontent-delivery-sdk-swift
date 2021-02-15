@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KenticoKontentDelivery'
-  s.version          = '2.2.0'
+  s.version          = '2.2.1'
   s.summary          = 'Swift SDK for Kentico Kontent Delivery'
 
 # This description is used to generate tags and improve search results.
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
   s.source_files = 'KenticoKontentDelivery/Classes/**/*'
   
   s.dependency 'AlamofireObjectMapper', '~> 5.2.0'
-  s.dependency 'Kanna', '~> 4.0.2'
+  s.dependency 'Kanna', '~> 5.2.4'
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
   
 end

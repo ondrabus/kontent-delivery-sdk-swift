@@ -8,13 +8,21 @@
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
     <a name="//apple_ref/swift/Class/ImageUrlBuilder" class="dashAnchor"></a>
     <a title="ImageUrlBuilder Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">KenticoKontentDelivery Docs</a> (89% documented)</p>
+        <p><a href="../index.html">KenticoKontentDelivery 2.2.0 Docs</a> (84% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -128,10 +136,26 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Protocols.html#/s:22KenticoKontentDelivery5BlockP">Block</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:22KenticoKontentDelivery12QueryBuildera">QueryBuilder</a>
               </li>
             </ul>
           </li>
@@ -143,6 +167,7 @@
             <h1>ImageUrlBuilder</h1>
               <div class="declaration">
                 <div class="language">
+                  
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ImageUrlBuilder</span></code></pre>
 
                 </div>
@@ -160,7 +185,7 @@ because the builder will not validate the parameter.</p>
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC04baseE0ACSS_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(baseUrl:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC04baseE0ACSS_tcfc">init(baseUrl:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC04baseE0ACSS_tcfc">init(baseUrl:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -241,7 +266,7 @@ because the builder will not validate the parameter.</p>
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC11withFitModeyA2C0dhI0OF"></a>
                     <a name="//apple_ref/swift/Method/withFitMode(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC11withFitModeyA2C0dhI0OF">withFitMode(_:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC11withFitModeyA2C0dhI0OF">withFitMode(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -293,7 +318,7 @@ Fit mode works only if width, height, or both parameters are set.</p>
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC9withWidthyACSiF"></a>
                     <a name="//apple_ref/swift/Method/withWidth(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC9withWidthyACSiF">withWidth(_:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC9withWidthyACSiF">withWidth(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -343,7 +368,7 @@ Fit mode works only if width, height, or both parameters are set.</p>
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC14withWidthRatioyACSdF"></a>
                     <a name="//apple_ref/swift/Method/withWidthRatio(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC14withWidthRatioyACSdF">withWidthRatio(_:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC14withWidthRatioyACSdF">withWidthRatio(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -393,7 +418,7 @@ Fit mode works only if width, height, or both parameters are set.</p>
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC10withHeightyACSiF"></a>
                     <a name="//apple_ref/swift/Method/withHeight(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC10withHeightyACSiF">withHeight(_:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC10withHeightyACSiF">withHeight(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -443,7 +468,7 @@ Fit mode works only if width, height, or both parameters are set.</p>
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC15withHeightRatioyACSdF"></a>
                     <a name="//apple_ref/swift/Method/withHeightRatio(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC15withHeightRatioyACSdF">withHeightRatio(_:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC15withHeightRatioyACSdF">withHeightRatio(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -493,7 +518,7 @@ Fit mode works only if width, height, or both parameters are set.</p>
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC7withDpryACSdF"></a>
                     <a name="//apple_ref/swift/Method/withDpr(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC7withDpryACSdF">withDpr(_:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC7withDpryACSdF">withDpr(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -544,7 +569,7 @@ DPR parameter works only if width, height, or both parameters are set.</p>
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC17withRectangleCrop1x1y5width6heightACSi_S3itF"></a>
                     <a name="//apple_ref/swift/Method/withRectangleCrop(x:y:width:height:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC17withRectangleCrop1x1y5width6heightACSi_S3itF">withRectangleCrop(x:y:width:height:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC17withRectangleCrop1x1y5width6heightACSi_S3itF">withRectangleCrop(x:<wbr>y:<wbr>width:<wbr>height:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -632,7 +657,7 @@ If both focal point crop and rectangle crop exist, only rectangle crop will appe
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC17withRectangleCrop1x1y10widthRatio06heightK0ACSd_S3dtF"></a>
                     <a name="//apple_ref/swift/Method/withRectangleCrop(x:y:widthRatio:heightRatio:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC17withRectangleCrop1x1y10widthRatio06heightK0ACSd_S3dtF">withRectangleCrop(x:y:widthRatio:heightRatio:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC17withRectangleCrop1x1y10widthRatio06heightK0ACSd_S3dtF">withRectangleCrop(x:<wbr>y:<wbr>widthRatio:<wbr>heightRatio:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -721,7 +746,7 @@ If both focal point crop and rectangle crop exist, only rectangle crop will appe
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC18withFocalPointCrop1x1y1zACSd_S2dtF"></a>
                     <a name="//apple_ref/swift/Method/withFocalPointCrop(x:y:z:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC18withFocalPointCrop1x1y1zACSd_S2dtF">withFocalPointCrop(x:y:z:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC18withFocalPointCrop1x1y1zACSd_S2dtF">withFocalPointCrop(x:<wbr>y:<wbr>z:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -730,7 +755,7 @@ If both focal point crop and rectangle crop exist, only rectangle crop will appe
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Updates the image builder with focal point crop.
-Fit mode will be set to <q>crop</q>.
+Fit mode will be set to &ldquo;crop&rdquo;.
 Incompatible with rect. If both focal point crop and rectangle crop exist, only rectangle crop will appear in URL.</p>
 
                       </div>
@@ -797,7 +822,7 @@ Incompatible with rect. If both focal point crop and rectangle crop exist, only 
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC19withBackgroundColor03rgbI05alphaACSi_SiSgtF"></a>
                     <a name="//apple_ref/swift/Method/withBackgroundColor(rgbColor:alpha:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC19withBackgroundColor03rgbI05alphaACSi_SiSgtF">withBackgroundColor(rgbColor:alpha:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC19withBackgroundColor03rgbI05alphaACSi_SiSgtF">withBackgroundColor(rgbColor:<wbr>alpha:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -859,7 +884,7 @@ Incompatible with rect. If both focal point crop and rectangle crop exist, only 
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC19withBackgroundColor3red5green4blue5alphaACSi_S3iSgtF"></a>
                     <a name="//apple_ref/swift/Method/withBackgroundColor(red:green:blue:alpha:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC19withBackgroundColor3red5green4blue5alphaACSi_S3iSgtF">withBackgroundColor(red:green:blue:alpha:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC19withBackgroundColor3red5green4blue5alphaACSi_S3iSgtF">withBackgroundColor(red:<wbr>green:<wbr>blue:<wbr>alpha:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -945,7 +970,7 @@ Incompatible with rect. If both focal point crop and rectangle crop exist, only 
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC04withD6FormatyA2C0dH0OF"></a>
                     <a name="//apple_ref/swift/Method/withImageFormat(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC04withD6FormatyA2C0dH0OF">withImageFormat(_:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC04withD6FormatyA2C0dH0OF">withImageFormat(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -997,7 +1022,7 @@ If no format parameter present, the output image format will be same as input on
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC04withD11CompressionyA2C0dH0OF"></a>
                     <a name="//apple_ref/swift/Method/withImageCompression(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC04withD11CompressionyA2C0dH0OF">withImageCompression(_:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC04withD11CompressionyA2C0dH0OF">withImageCompression(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1048,7 +1073,7 @@ The compression works only if the output image format has been set to WebP.</p>
                     <code>
                     <a name="/s:22KenticoKontentDelivery15ImageUrlBuilderC11withQualityyACSiF"></a>
                     <a name="//apple_ref/swift/Method/withQuality(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC11withQualityyACSiF">withQuality(_:)</a>
+                    <a class="token" href="#/s:22KenticoKontentDelivery15ImageUrlBuilderC11withQualityyACSiF">withQuality(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1214,8 +1239,8 @@ Quality parameter works only if the output image format is either jpg, pjpg, or 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://github.com/kentico/kontent-delivery-sdk-swift" target="_blank" rel="external">makma</a>. All rights reserved. (Last updated: 2019-11-27)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/kentico/kontent-delivery-sdk-swift" target="_blank" rel="external">makma</a>. All rights reserved. (Last updated: 2021-02-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

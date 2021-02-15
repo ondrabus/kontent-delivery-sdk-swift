@@ -5,13 +5,13 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
-  - Kanna (4.0.3)
-  - KenticoKontentDelivery (2.1.1):
+  - Kanna (5.2.4)
+  - KenticoKontentDelivery (2.2.0):
     - AlamofireObjectMapper (~> 5.2.0)
-    - Kanna (~> 4.0.2)
+    - Kanna (~> 5.2.4)
   - Nimble (7.3.4)
   - ObjectMapper (3.5.3)
-  - Quick (2.2.0)
+  - Quick (2.2.1)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.6.0)
@@ -37,12 +37,12 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
-  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
-  KenticoKontentDelivery: ead681a6b19d2d1c06d5aec5406455680ce10944
+  Kanna: b9d00d7c11428308c7f95e1f1f84b8205f567a8f
+  KenticoKontentDelivery: 3d90bf1d84ad4fcd3c03f6164e2945293c64079e
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
 
-PODFILE CHECKSUM: e74df05bbeeffec040f18c10a90e5eaf24f5d465
+PODFILE CHECKSUM: 81e70ce28542de878eb50d383cb80e3be428cad7
 
 COCOAPODS: 1.10.1

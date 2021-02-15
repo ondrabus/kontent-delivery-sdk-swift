@@ -13,7 +13,7 @@ public class ItemResponse<T>: Mappable where T: Mappable {
     
     /// Response item.
     public private(set) var item: T?
-    private var map: Map
+    public private(set) var map: Map
     
     /// Maps response's json instance of the item into strongly typed object representation.
     public required init?(map: Map) {
