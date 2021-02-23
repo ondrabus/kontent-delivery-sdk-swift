@@ -413,4 +413,3 @@ Check out the [contributing](https://github.com/Kentico/kontent-delivery-sdk-swi
 
 Kentico Kontent Delivery SDK is available under the MIT license. See the LICENSE file for more information.
 
-![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kontent-delivery-sdk-swift?pixel)
