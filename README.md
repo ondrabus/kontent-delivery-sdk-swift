@@ -389,6 +389,14 @@ let deliveryClient = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", enableDeb
 1. Create a new release with a new tag.
 1. GitHub Actions automatically builds and releases a new version of the pod when added new tag.
 
+### Obtaining Cocoapods trunk token
+1.  `$ pod trunk register yourmail@kentico.com 'Kontent SDK Swift' --description='GitHub Actions token'`
+1.  Confirm email (check junk)
+1.  `$ pod trunk me --verbose`
+1. `grep -A2 'trunk.cocoapods.org' ~/.netrc`
+
+You can find more info in the [Cocoapods documentation](https://guides.cocoapods.org/making/getting-setup-with-trunk.html).
+
 ## Documentation
 
 You can find full API reference documentation [here](https://kentico.github.io/kontent-delivery-sdk-swift/index.html).
