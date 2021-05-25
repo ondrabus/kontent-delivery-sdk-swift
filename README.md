@@ -375,6 +375,9 @@ For running SDK with sample app locally follow the next steps.
 1. Open `KenticoKontentDelivery.xcworkspace` in XCode.
 1. Run.
 
+### Custom Delivery Endpoint
+For testing non-production features of the Delivery API, one can override Delivery API Endpoint using custom property `KenticoKontentDeliveryEndpoint` in the [Info.plist](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html).
+
 ## Debug
 
 If you want to view debug info from both clients set client's `enableDebugLogging` attribute:
