@@ -1,14 +1,14 @@
-# Kentico Kontent Delivery SDK
+# Kontent Delivery SDK
 
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
 [![CocoaPods](https://img.shields.io/cocoapods/v/KenticoKontentDelivery.svg)](https://cocoapods.org/pods/KenticoKontentDelivery)
 [![CocoaPods](https://img.shields.io/cocoapods/p/KenticoKontentDelivery.svg)](https://cocoapods.org/pods/KenticoKontentDelivery)
 
 ## Summary
-The Kentico Kontent Delivery SDK is a library used for retrieving content. You can use the SDK as a CocoaPod package or add it manually.
+The Kontent Delivery SDK is a library used for retrieving content from [Kontent by Kentico](https://kontent.ai). You can use the SDK as a CocoaPod package or add it manually.
 
 ### Sample app
-The repository contains sample app which demonstrates basic usage of the SDK. It displays content from a Sample Project that demonstrates Kentico Kontent features and best practices. This fully featured project contains marketing content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any admin of a Kentico Kontent subscription [can generate one](https://docs.kontent.ai/tutorials/set-up-projects/manage-projects/managing-projects#a-creating-a-sample-project). 
+The repository contains sample app which demonstrates basic usage of the SDK. It displays content from a Sample Project that demonstrates Kontent features and best practices. This fully featured project contains marketing content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any admin of a Kontent subscription [can generate one](https://docs.kontent.ai/tutorials/set-up-projects/manage-projects/managing-projects#a-creating-a-sample-project). 
 
 <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/splashScreens.png?raw=true" width="212"> <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw=true" width="212"> <img src="https://github.com/Kentico/kontent-delivery-sdk-swift/blob/master/SampleAppScreens/locations.png?raw=true" width="212">
 
@@ -30,7 +30,7 @@ end
 $ pod install
 ```
 
-**2. Create a type object** - in this example, the type object is `Article`. It represents a Content type in Kentico Kontent that the retrieved content items are based on. This content type has three elements with following codenames: `title` (a text element),`teaser_image` (an asset element) and `post_date` (a DateTime element).
+**2. Create a type object** - in this example, the type object is `Article`. It represents a Content type in Kontent that the retrieved content items are based on. This content type has three elements with following codenames: `title` (a text element),`teaser_image` (an asset element) and `post_date` (a DateTime element).
 ```swift
 import ObjectMapper
 import KenticoKontentDelivery
@@ -92,7 +92,7 @@ client.getItems(modelType: Article.self, queryParameters: articleQueryParameters
 $ gem install cocoapods
 ```
 
-To integrate Kentico Kontent into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate Kontent into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -112,7 +112,7 @@ $ pod install
  
 ## Using the DeliveryClient
 
-The `DeliveryClient` class is the main class of the SDK for getting content. Using this class, you can retrieve content from your Kentico Kontent projects.
+The `DeliveryClient` class is the main class of the SDK for getting content. Using this class, you can retrieve content from your Kontent projects.
 
 To create an instance of the class, you need to provide a [project ID](https://docs.kontent.ai/tutorials/develop-apps/get-content/getting-content#section-getting-content-items):
 
@@ -125,7 +125,7 @@ Once you create a `DeliveryClient`, you can start querying your project reposito
 
 ### Previewing unpublished content
 
-To retrieve unpublished content, you need to create a `DeliveryClient` with both Project ID and Preview API key. Each Kentico Kontent project has its own Preview API key. 
+To retrieve unpublished content, you need to create a `DeliveryClient` with both Project ID and Preview API key. Each Kontent project has its own Preview API key. 
 
 ```swift
 import KenticoKontentDelivery
@@ -346,7 +346,7 @@ client.getTaxonomies(completionHandler: { (isSuccess, deliveryItems, error) in
 
 ## Use image transformation
 
-Kentico Kontent supports image transformation by using URL parameters. A helper class is provided to create the URL conveniently.
+Kontent supports image transformation by using URL parameters. A helper class is provided to create the URL conveniently.
 
 However, see our [documentation on image transformation](https://docs.kontent.ai/reference/image-transformation) to understand the restriction of parameters before using the helper class, as the helper class does not validate the input parameters.
 
@@ -403,7 +403,7 @@ We use Jazzy which is a command-line utility that generates documentation for Sw
 
 ## Further information
 
-For more developer resources, visit the Kentico Kontent tutorials at <https://docs.kontent.ai/tutorials/develop-apps>.
+For more developer resources, visit the Kontent tutorials at <https://docs.kontent.ai/tutorials/develop-apps>.
 
 ## Feedback & Contributing
 
@@ -411,5 +411,5 @@ Check out the [contributing](https://github.com/Kentico/kontent-delivery-sdk-swi
 
 ## License
 
-Kentico Kontent Delivery SDK is available under the MIT license. See the LICENSE file for more information.
+Kontent Delivery SDK is available under the MIT license. See the LICENSE file for more information.
 
